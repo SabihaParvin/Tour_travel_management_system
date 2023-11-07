@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ReviewController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\RatingsController;
 use App\Http\Controllers\TouristController;
 use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\Backend\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +32,9 @@ Route::get('/admin/logout',[UserController::class,'logout'])->name('admin.logout
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', [HomeController::class, 'home'])->name('dashboard');
+
+    Route::get('/users/list',[UserController::class,'list']);
+    
 
     Route::get('/tourist/list', [TouristController::class, 'list']);
     Route::get('/tourist/form', [TouristController::class, 'form']);

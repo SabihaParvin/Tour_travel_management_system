@@ -43,4 +43,9 @@ class UserController extends Controller
         return redirect()->route("admin.login");
     }
 
+    public function list(){
+        return view('admin.pages.users.list');
+    }
+
+
 }

@@ -40,6 +40,9 @@ class TouristController extends Controller
             'password'=>$request->password,
            ]);
 
+
+           notify()->success('Laravel Notify is awesome!');
+
            return redirect()->back()->witherrors($valided);
     }
 }
