@@ -37,6 +37,8 @@ class UserController extends Controller
        return redirect()->back()->withErrors('invalid user email or password');
     }
 
+
+
     public function logout()
     {
         auth()->logout();
@@ -46,6 +48,11 @@ class UserController extends Controller
     public function list(){
         return view('admin.pages.users.list');
     }
-
+    public function form(){
+        return view('admin.pages.users.form');
+    }
+    public function store(){
+      return view('admin.pages.users.store');
+    }
 
 }

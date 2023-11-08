@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ReviewController;
@@ -26,14 +24,17 @@ use App\Http\Controllers\Backend\UserController;
 |
 */
 
-Route::get('/admin/login', [UserController::class, 'loginform'])->name('admin.login');
-Route::post('/admin-form-post', [UserController::class, 'loginpost'])->name('admin.login.post');
-Route::get('/admin/logout',[UserController::class,'logout'])->name('admin.logout');
-Route::group(['middleware' => 'auth'], function () {
+    Route::get('/admin/login', [UserController::class, 'loginform'])->name('admin.login');
+    Route::post('/admin-form-post', [UserController::class, 'loginpost'])->name('admin.login.post');
+
+    Route::group(['middleware' => 'auth'], function () {
+    Route::get('/admin/logout',[UserController::class,'logout'])->name('admin.logout');
 
     Route::get('/', [HomeController::class, 'home'])->name('dashboard');
 
     Route::get('/users/list',[UserController::class,'list']);
+    Route::get('/users/form',[UserController::class,'form']);
+    Route::post('/users/store',[UserController::class,'store'])->name('users.store');
     
 
     Route::get('/tourist/list', [TouristController::class, 'list']);
