@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -46,13 +47,23 @@ class UserController extends Controller
     }
 
     public function list(){
-        return view('admin.pages.users.list');
+        $users=User::all();
+        return view('admin.pages.users.list',compact('users'));
     }
     public function form(){
         return view('admin.pages.users.form');
     }
-    public function store(){
-      return view('admin.pages.users.store');
+    public function store(Request $request ){
+      
+        User::create([
+          'name'=>$request->user_name,
+          'role'=>$request->role,
+          'email'=>$request->user_email,
+          'image'=>$request->user_image,
+           'password'=>bcrypt($request->user_password),
+        ]);
+
+        return redirect()->back();
     }
 
 }

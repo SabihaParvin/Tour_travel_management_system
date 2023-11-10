@@ -20,6 +20,26 @@
   </thead>
   <tbody>
     
-  </tbody>
+  @foreach($users as $user)
+
+<tr>
+  <th scope="row">{{$user->id}}</th>
+  <td>{{$user->user_name}}</td>
+  <td>{{$user->role}}</td>
+  <td>{{$user->user_email}}</td>
+  <td>{{$user->user_image}}</td>
+  <td>{{$user->user_password}}</td>
+ 
+  <td>
+    <a class="btn btn-success">Edit</a>
+    <a class="btn btn-danger">Delete</a>
+  </td>
+
+</tr>
+@endforeach
+</tbody>
 </table>
+
+
+
 @endsection
