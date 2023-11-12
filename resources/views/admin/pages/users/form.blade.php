@@ -6,12 +6,15 @@
     @csrf
   <div class="form-group">
     <label for="">Enter user Name:</label>
-    <input type="text" class="form-control" id="" placeholder="Enter name" name="user_name">
+    <input type="text" class="form-control" id="" placeholder="Enter name" name="user_name"required>
+    @error('user_name')
+  <div class="alert alert-danger">{{ $message}}</div>
+  @enderror
   </div>
 
   <div class="form-group">
     <label for="">Select Role:</label>
-   <select class="form-control" name="role" id="">
+   <select required class="form-control" name="role" id="">
         <!-- <option value="">Admin</option> -->
         <option value="manager">Manager</option>
         <option value="account">Account</option>
@@ -20,7 +23,10 @@
   
   <div class="form-group">
     <label for="">Enter User email:</label>
-    <input type="email" class="form-control" id="" placeholder="Enter email" name="user_email" >
+    <input type="email" class="form-control" id="" placeholder="Enter email" name="user_email"required >
+    @error('user_email')
+  <div class="alert alert-danger">{{ $message}}</div>
+  @enderror
   </div>
 
   <div class="form-group">
@@ -30,7 +36,10 @@
 
   <div class="form-group">
     <label for="">Enter Password: </label>
-    <input type="password" class="form-control" placeholder="Enter password" name="user_password">
+    <input type="password" class="form-control" placeholder="Enter password" name="user_password"required>
+    @error('user_password')
+  <div class="alert alert-danger">{{ $message}}</div>
+  @enderror
   </div>
 
   

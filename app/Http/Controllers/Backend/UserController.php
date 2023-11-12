@@ -53,17 +53,35 @@ class UserController extends Controller
     public function form(){
         return view('admin.pages.users.form');
     }
-    public function store(Request $request ){
+    public function store(Request $request )
+    {
+        // dd($request->all());
+        $validate=Validator::make($request->all(),[
+
+            
+            'user_name'=>'required',
+            'role'=>'required',
+            'user_email'=>'required|email',
+            'user_password'=>'required|min:6',
+        ]);
+
+
+        if($validate->fails())
+        {
+            return redirect()->back()->with('myError',$validate->getMessageBag());
+        }
       
+
+        
         User::create([
           'name'=>$request->user_name,
           'role'=>$request->role,
           'email'=>$request->user_email,
           'image'=>$request->user_image,
-           'password'=>bcrypt($request->user_password),
+            'password'=>bcrypt($request->user_password),
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('message','User created successfully');
     }
 
 }
