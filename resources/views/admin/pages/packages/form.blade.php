@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{route('package.store')}}" method="post">
+<form action="{{route('packages.store')}}" method="post">
   @csrf
   <div class="form-group">
     <label for="">Enter package Name:</label>

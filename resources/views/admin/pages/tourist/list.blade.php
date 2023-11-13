@@ -4,7 +4,7 @@
 
 <h2>Tourist List</h2>
 
-<a href="{{url('/tourist/form')}}" class="btn btn-success">Add New Tourist</a>
+<a href="{{route('tourist.form')}}" class="btn btn-success">Add New Tourist</a>
 
 <table class="table table-light">
   <thead>

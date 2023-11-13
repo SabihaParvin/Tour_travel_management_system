@@ -3,7 +3,7 @@
 @section('content')
 <h1>Package List</h1>
 
-<a href="{{url('/package/form')}}" class="btn btn-success">Create New Packages</a>
+<a href="{{route('packages.form')}}" class="btn btn-success">Create New Packages</a>
 
 
 <table class="table table-light">

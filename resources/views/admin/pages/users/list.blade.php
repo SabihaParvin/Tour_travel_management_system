@@ -1,46 +1,44 @@
 @extends('admin.master')
 
 @section('content')
+<h1>User List</h1>
 
-<h2>Tourist List</h2>
-
-<a href="{{url('/users/form')}}" class="btn btn-success">Add New User</a>
-
-<table class="table table-light">
+<a href="{{route('users.form')}}" class="btn btn-success">Create new User</a>
+<table class="table">
   <thead>
     <tr>
-      <th scope="col">SL No</th>
+      <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">Role</th>
-     
       <th scope="col">Image</th>
       <th scope="col">Email</th>
-      <th scope="col">Password</th>
+      <th scope="col">Role</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    
-    @foreach($users as $user)
-
+    @foreach ($users as $key=>$singleUser)
     <tr>
-      <th scope="row">{{$user->id}}</th>
-      <td>{{$user->name}}</td>
-      <td>{{$user->role}}</td>
-      <td>{{$user->image}}</td>
-      <td>{{$user->email}}</td>
-      <td>{{$user->password}}</td>
-      
-     
-      <td>
-        <a class="btn btn-success">Edit</a>
-        <a class="btn btn-warning">view</a>
-        <a class="btn btn-danger">Delete</a>
-      </td>
+        <td>{{$key+1}}</td>
+        <td>{{$singleUser->name}}</td>
+        <td>
+            <img style="border-radius: 60px;" width="7%" src="{{url('/uploads/'.$singleUser->image)}}" alt="image">
+        </td>
+        <td>{{$singleUser->email}}</td>
+        <td>{{$singleUser->role}}</td>
+        <td>
+            <a class="btn btn-success" href="">View</a>
+            <a class="btn btn-warning" href="">Edit</a>
+            <a  class="btn btn-danger"href="">Delete</a>
+        </td>
 
     </tr>
-@endforeach
+        
+    @endforeach
+
+
+   
+
+    
   </tbody>
 </table>
-
 @endsection
