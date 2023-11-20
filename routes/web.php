@@ -53,6 +53,9 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
     Route::post('/login-form-post', [UserController::class, 'loginpost'])->name('admin.login.post');
 
     Route::group(['middleware' => 'auth'], function () {
+
+        Route::group(['middleware' => 'checkAdmin'], function () {
+
     Route::get('/logout',[UserController::class,'logout'])->name('admin.logout');
 
     Route::get('/', [HomeController::class, 'home'])->name('dashboard');
@@ -103,5 +106,6 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
     Route::get('/blog/form', [BlogController::class, 'form'])->name('blog.form');
     //Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
 
-});
+        });
+    });
 });
