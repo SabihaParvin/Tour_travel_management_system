@@ -11,4 +11,8 @@ class BlogController extends Controller
     public function list(){
         return view('admin.pages.blog.list');
     } 
+
+    public function form(){
+        return view('admin.pages.blog.form');
+    }
 }

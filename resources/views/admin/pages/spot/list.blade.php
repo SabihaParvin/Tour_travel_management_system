@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Ratings</h1>
+<h1>Place List</h1>
 <table class="table table-light">
   <thead>
     <tr>

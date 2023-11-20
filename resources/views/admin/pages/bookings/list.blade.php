@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Booking List</h1>
-<table class="table table-dark">
+<table class="table table-light">
   <thead>
     <tr>
       <th scope="col">#</th>

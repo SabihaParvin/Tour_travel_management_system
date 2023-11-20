@@ -11,4 +11,8 @@ class BookingsController extends Controller
     public function list(){
         return view('admin.pages.bookings.list');
     }
+
+    public function form(){
+        return view('admin.pages.bookings.form');
+    }
 }

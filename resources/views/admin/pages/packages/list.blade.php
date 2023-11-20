@@ -1,6 +1,7 @@
 @extends('admin.master')
 
 @section('content')
+
 <h1>Package List</h1>
 
 <a href="{{route('packages.form')}}" class="btn btn-success">Create New Packages</a>

@@ -1,8 +1,9 @@
 @extends('admin.master')
 
 @section('content')
-<h1>Place List</h1>
-<table class="table table-dark">
+
+<h1>place</h1>
+<table class="table table-light">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -32,4 +33,5 @@
     </tr>
   </tbody>
 </table>
+
 @endsection

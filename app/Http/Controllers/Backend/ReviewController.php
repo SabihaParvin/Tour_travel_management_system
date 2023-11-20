@@ -10,4 +10,8 @@ class ReviewController extends Controller
     public function list(){
         return view('admin.pages.review.list');
     }
+
+    public function form(){
+        return view('admin.pages.review.form');
+    }
 }

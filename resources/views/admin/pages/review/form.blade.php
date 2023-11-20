@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Ratings</h1>
+<h1>Reviews</h1>
 <table class="table table-light">
   <thead>
     <tr>
@@ -33,4 +33,5 @@
     </tr>
   </tbody>
 </table>
+
 @endsection
