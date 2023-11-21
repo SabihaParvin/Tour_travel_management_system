@@ -13,7 +13,6 @@
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Phone no</th>
-      <th scope="col">Password</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -26,11 +25,10 @@
       <td>{{$tourist->name}}</td>
       <td>{{$tourist->email}}</td>
       <td>{{$tourist->phoneNo}}</td>
-      <td>{{$tourist->password}}</td>
-     
       <td>
-        <a class="btn btn-success">Edit</a>
-        <a class="btn btn-danger">Delete</a>
+        <a class="btn btn-warning" href="">View</a>
+        <a class="btn btn-success" href="">Edit</a>
+        <a class="btn btn-danger" href="">Delete</a>
       </td>
 
     </tr>

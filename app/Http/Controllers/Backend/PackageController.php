@@ -30,4 +30,22 @@ class PackageController extends Controller
 
         }
 
+        public function delete($id)
+        {
+            $package=Package::find($id);
+            //dd($package);
+         if($package)
+        {
+            $package->delete();
+        }
+        notify()->success('Package Deleted Successfully');
+      return redirect()->back();
+        }
+
+        public function edit($id)
+        {
+            $package=Package::find($id);
+            return view('admin.pages.packages.edit',compact('package'));    
+        }
+
 }

@@ -36,8 +36,8 @@
 								@endguest
 
 								@auth
-								<a class="btn btn-primary" href="{{route('profile.view')}}">{{auth()->user()->name}} ({{ auth()->user()->role }})</a> | 
-								<a class="btn btn-primary" href="{{route('tourist.logout')}}">Logout</a>
+								<a class="btn btn-primary" href="{{route('tourist.logout')}}">Logout</a> |
+								<a class="btn btn-primary" href="{{route('profile.view')}}">Profile|{{auth()->user()->name}} ({{ auth()->user()->role }})</a> 
 								@endauth
 
 								<!--/.project-btn-->

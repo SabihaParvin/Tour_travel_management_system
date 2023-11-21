@@ -21,10 +21,10 @@
   </thead>
   <tbody>
     
-    @foreach($packages  as $package)
+    @foreach($packages  as $key=>$package)
 
     <tr>
-      <th scope="row">{{$package->id}}</th>
+    <th scope="row">{{$key+1}}</th>
       <td>{{$package->name}}</td>
       <td>{{$package->description}}</td>
       <td>{{$package->price}}</td>
@@ -32,8 +32,9 @@
       <td>{{$package->end_date}}</td>
      
       <td>
-        <a class="btn btn-success">Edit</a>
-        <a class="btn btn-danger">Delete</a>
+        <a class="btn btn-success">view</a>
+        <a class="btn btn-warning" href="{{route('package.edit',$package->id)}}">Edit</a>
+        <a class="btn btn-danger" href="{{route('package.delete',$package->id)}}">Delete</a>
       </td>
 
     </tr>
