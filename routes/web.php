@@ -75,6 +75,8 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
     Route::post('/package/store', [PackageController::class, 'store'])->name('packages.store');
     Route::get('/package/delete/{id}',[PackageController::class,'delete'])->name('package.delete');
     Route::get('/package/edit/{id}',[PackageController::class,'edit'])->name('package.edit');
+    Route::put('/package/update/{id}',[PackageController::class,'update'])->name('package.update');
+    Route::get('/package/view/{id}',[PackageController::class,'view'])->name('package.view');
 
     Route::get('/spot/list', [SpotController::class, 'list'])->name('spot.list');
     Route::get('/spot/form', [SpotController::class, 'form'])->name('place.form');

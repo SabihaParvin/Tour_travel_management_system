@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->string('name',60);
-            $table->string('description',200);
-            $table->string('price',60);
+            $table->string('name',100);
+            $table->string('image')->nullable();
+            $table->string('description',1000);
+            $table->string('price',6);
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->timestamps();
