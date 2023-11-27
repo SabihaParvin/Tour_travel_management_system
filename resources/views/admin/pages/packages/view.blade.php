@@ -7,20 +7,24 @@
 							<div class="single-package-item">
                             <img  src="{{url('/uploads/'.$package->image)}}" alt="image">
 								<div class="single-package-item-txt">
-									<h3>thailand <span class="pull-right">$799</span></h3>
+									<h3 class="pull-right">{{$package->name}} </h3>
+                                    <h5>Price: {{$package->price}}</h5>
 									<div class="packages-para">
 										<p>
 											<span>
-												<i class="fa fa-angle-right"></i> 5 Days 6 nights
+												<i class="fa fa-angle-right"></i>Description: {{$package->description}}
 											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
+                                         </p>
+                                        <p>
+                                            <span>
+											<i class="fa fa-angle-right"></i> Start Date: {{$package->start_date}}
+                                            </span>
 										</p>
 										<p>
 											<span>
-												<i class="fa fa-angle-right"></i>  transportation
+												<i class="fa fa-angle-right"></i>End Date: {{$package->end_date}}
 											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
+										</p>
 									</div><!--/.packages-para-->
 									<div class="packages-review">
 										<p>

@@ -31,14 +31,14 @@
             <img style="border-radius: 100px;" width="20%" src="{{url('/uploads/'.$package->image)}}" alt="image">
         </td>
       <td>{{$package->description}}</td>
-      <td>{{$package->price}}</td>
+      <td>{{$package->price}}.BDT</td>
       <td>{{$package->start_date}}</td>
       <td>{{$package->end_date}}</td>
      
       <td>
-        <a class="btn btn-success" href="{{route('package.view',$package->id)}}">view</a>
-        <a class="btn btn-warning" href="{{route('package.edit',$package->id)}}">Edit</a>
-        <a class="btn btn-danger" href="{{route('package.delete',$package->id)}}">Delete</a>
+        <a class="btn btn-success" href="{{route('package.view', $package->id)}}">view</a>
+        <a class="btn btn-warning" href="{{route('package.edit', $package->id)}}">Edit</a>
+        <a class="btn btn-danger" href="{{route('package.delete', $package->id)}}">Delete</a>
       </td>
 
     </tr>

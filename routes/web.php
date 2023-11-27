@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\RatingsController;
 use App\Http\Controllers\Backend\TouristController;
 use App\Http\Controllers\Backend\BookingsController;
 use App\Http\Controllers\Backend\LocationController;
+use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePackageController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\TouristController as FrontendTouristController;
 
@@ -39,6 +40,9 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
 
     Route::get('/login',[FrontendTouristController::class,'login'])->name('tourist.login');
     Route::post('/login',[FrontendTouristController::class,'loginpost'])->name('tourist.login.post');
+    
+
+    Route::get('/single-package-view', [FrontendSinglePackageController::class, 'singlePackage'])->name('single.package');
 
     Route::group(['middleware'=>'auth'],function(){
         Route::get('/profile',[FrontendTouristController::class,'profile'])->name('profile.view');
