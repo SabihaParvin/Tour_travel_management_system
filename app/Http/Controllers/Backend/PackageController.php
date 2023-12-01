@@ -41,9 +41,20 @@ class PackageController extends Controller
         {
             $package=Package::find($id);
             if($package)
+            {
+                $fileName=$package->image;
+                if($request->hasFile('image'))
+                {
+                    $file=$request->file('image');
+                    $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+                    $file->storeAs('/uploads',$fileName);
+        
+                }   
+            }
         {
             $package->update([
                 'name'=>$request->name,
+                'image'=>$fileName,
                 'description'=>$request->description,
                 'price'=>$request->price,
                 'start_date'=>$request->start_date,
@@ -77,9 +88,9 @@ class PackageController extends Controller
         }
 
         $fileName=null;
-        if($request->hasFile('package_image'))
+        if($request->hasFile('image'))
         {
-            $file=$request->file('package_image');
+            $file=$request->file('image');
             $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
             $file->storeAs('/uploads',$fileName);
 

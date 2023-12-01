@@ -16,7 +16,7 @@
 
   <div class="form-group">
     <label for="">Upload Image: </label>
-    <input name="package_image" type="file" class="form-control">
+    <input name="image" type="file" class="form-control">
   </div>
 
   <div class="form-group">

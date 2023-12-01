@@ -13,6 +13,11 @@
   </div>
 
   <div class="form-group">
+    <label for="">Upload Image: </label>
+    <input value="{{$package->image}}" name="image" type="file" class="form-control">
+  </div>
+
+  <div class="form-group">
   <label for="">Enter Package Description:</label>
    <input value="{{$package->description}}" class="form-control" name="description" id="" cols="30" rows="10">
   </div>

@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Http\Controllers\frontend;
+
+use App\Http\Controllers\Controller;
+use App\Models\Booking;
+use Illuminate\Http\Request;
+
+class BookingsController extends Controller
+{
+    public function bookNow($packageID)
+    {
+        Booking::create([
+            'user_id'=>auth()->user()->id,
+            'package_id'=>$packageID,
+       ]);
+       notify()->success('Booking successfull');
+       return redirect()->back();
+    }
+}

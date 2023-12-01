@@ -5,7 +5,7 @@
 			<div class="row">
 				<div class="col-sm-2">
 					<div class="logo">
-						<a href="index.html">
+						<a href="{{route('frontend.home')}}">
 							Pack your<span>Bags</span>
 						</a>
 					</div><!-- /.logo-->
@@ -19,16 +19,12 @@
 								<i class="fa fa-bars"></i>
 							</button><!-- / button-->
 						</div><!-- /.navbar-header-->
-						<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav navbar-right">
-								<li class="smooth-menu"><a href="#home">home</a></li>
-								<li class="smooth-menu"><a href="#gallery">Destination</a></li>
-								<li class="smooth-menu"><a href="#pack">Packages </a></li>
-								<li class="smooth-menu"><a href="#spo">Special Offers</a></li>
-								<li class="smooth-menu"><a href="#blog">blog</a></li>
-								
-
-
+						<div class="collapse navbar-collapse ml-50">
+								<a  class="btn btn-primary" href="{{route('frontend.home')}}">Home</a>
+								<a  class="btn btn-primary" href="{{route('frontend.home')}}">Destination</a>
+								<a  class="btn btn-primary" href="{{route('frontend.home')}}">Packages</a>
+								<a  class="btn btn-primary" href="{{route('frontend.home')}}">Special Offers</a>
+								<a  class="btn btn-primary" href="{{route('frontend.home')}}">blog</a>
 								<a class="btn btn-primary" href="">Book Now</a>
 								@guest
 								<a class="btn btn-primary" href="{{route('tourist.registration')}}">Registration</a>

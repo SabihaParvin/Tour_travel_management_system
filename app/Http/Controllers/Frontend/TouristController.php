@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\User;
+use App\Models\Booking;
+use App\Models\Package;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -17,7 +19,14 @@ class TouristController extends Controller
     public function profile()
     {
         return view('frontend.pages.profile');
+        
+        $bookings=Booking::where('user_id',auth()->user()->id)->get();
+    
+        $users=User::all();
+        
+        return view('frontend.pages.profile',compact('bookings','users'));
     }
+    
 
     public function store(Request $request)
     {
@@ -57,7 +66,7 @@ class TouristController extends Controller
         if(auth()->attempt($credentials))
         {
             notify()->success('Login Successfull.');
-            return redirect()->route('home');
+            return redirect()->route('frontend.home');
         }
 
         notify()->error('Invalid Credentials.');

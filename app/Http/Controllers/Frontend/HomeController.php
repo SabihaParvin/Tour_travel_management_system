@@ -12,7 +12,8 @@ class HomeController extends Controller
 
   {
     $packages=Package::all();
-    return view('frontend.master', compact('packages'));
+
+    return view('frontend.pages.home', compact('packages'));
   }  
   
 }
