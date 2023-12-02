@@ -47,8 +47,9 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
 
     Route::group(['middleware'=>'auth'],function(){
         Route::get('/profile',[FrontendTouristController::class,'profile'])->name('profile.view');
-        Route::get('/logout',[FrontendTouristController::class,('logout')])->name('tourist.logout');
-        Route::get('/book-now/{id}',[FrontendBookingsController::class,('bookNow')])->name('book.now');
+        Route::get('/logout',[FrontendTouristController::class,'logout'])->name('tourist.logout');
+        Route::get('/book-now/{id}',[FrontendBookingsController::class,'bookNow'])->name('book.now');
+        Route::get('/cancel-bookings/{package_id}',[FrontendBookingsController::class,'cancelBookings'])->name('cancel.bookings');
     });
 
     //admin panel routes

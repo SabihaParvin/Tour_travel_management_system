@@ -3,7 +3,7 @@
 @section('content')
 
 <h1>Edit your packages</h1>
-<form action="{{route('package.update',$package->id)}}" method="post">
+<form action="{{route('package.update',$package->id)}}" method="post" enctype="multipart/form-data">
   @csrf
   @method('put')
   <div class="form-group">

@@ -17,4 +17,18 @@ class BookingsController extends Controller
        notify()->success('Booking successfull');
        return redirect()->back();
     }
+
+    public function cancelBookings($bID)
+    {
+        $booking=Booking::find($bID);
+        if($booking)
+        {
+            $booking->update([
+                'status'=>'cancelled'
+            ]);
+        }
+
+        notify()->success('Booking Cancelled');
+       return redirect()->back();
+    }
 }

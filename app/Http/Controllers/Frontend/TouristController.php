@@ -17,12 +17,13 @@ class TouristController extends Controller
     }
 
     public function profile()
-    {
-        return view('frontend.pages.profile');
+    {   
+        // return view('frontend.pages.profile');
         
-        $bookings=Booking::where('user_id',auth()->user()->id)->get();
-    
+        $bookings= Booking::where('user_id',auth()->user()->id)->get();
+        // dd($bookings->toarray());
         $users=User::all();
+        // dd($users);
         
         return view('frontend.pages.profile',compact('bookings','users'));
     }
