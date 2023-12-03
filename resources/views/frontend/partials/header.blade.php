@@ -35,7 +35,12 @@
 								<a class="btn btn-primary" href="{{route('tourist.logout')}}">Logout</a> |
 								<a class="btn btn-primary" href="{{route('profile.view')}}">Profile|{{auth()->user()->name}} ({{ auth()->user()->role }})</a> 
 								@endauth
+						<h5 class="display-4 fw-bolder">Search your package(s)</h5>
 
+						<form action="{{route('search.package')}}" method="get">
+						<input type="text" class="form-control" placeholder="Search..." name="search">
+						<button type="submit" class="btn btn-success">Search</button>
+						</form>
 								<!--/.project-btn-->
 
 							</ul>

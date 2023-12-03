@@ -25,9 +25,27 @@ class TouristController extends Controller
         $users=User::all();
         // dd($users);
         
-        return view('frontend.pages.profile',compact('bookings','users'));
+        return view('frontend.pages.profile.viewprofile',compact('bookings','users'));
     }
     
+    public function profileEdit($userId)
+    {
+      
+        $users=User::find($userId);
+    
+        return view('frontend.pages.profile.profileEdit',compact('users'));
+    
+    }
+
+    public function profileUpdate(Request $request, $userId)
+    {
+        $users=User::find($userId);
+
+     notify()->success('Updated successfully.');
+    return redirect()->route('profile.view');
+
+    }
+
 
     public function store(Request $request)
     {
@@ -74,11 +92,14 @@ class TouristController extends Controller
             return redirect()->back();
     }
 
+    
+    
+
     public function logout()
     {
         auth()->logout();
         notify()->success('Logout Successfull.');    
-        return redirect()->route('home');
+        return redirect()->route('frontend.home');
     }
 
 }

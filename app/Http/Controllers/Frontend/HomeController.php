@@ -15,5 +15,17 @@ class HomeController extends Controller
 
     return view('frontend.pages.home', compact('packages'));
   }  
+  public function searchpackage(Request $request)
+  {
+    //dd(request()->all());
+    if($request->search)
+    {
+        $packages=Package::where('name','LIKE','%'.$request->search.'%')->get();
+        //select * from packages where name like % cox's Bazar %;
+    }else{
+        $packages=Package::all();
+    }
+    return view('frontend.pages.search.searchPackage',compact('packages'));
+  }
   
 }

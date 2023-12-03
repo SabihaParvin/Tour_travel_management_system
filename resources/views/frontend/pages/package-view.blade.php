@@ -17,7 +17,7 @@
                         <div class="ms-1"> <span>{{$singlePackage->start_date}} </span> </div>
                         <div class="ms-1"> <span>{{$singlePackage->end_date}} </span> </div>
                         <div class="mt-5 radio-buttons"> <label class="radio"> <input type="radio" name="code" value="grey" checked> <span></span> </label> <label class="radio"> <input type="radio" name="code" value="pink"> <span></span> </label> <label class="radio"> <input type="radio" name="code" value="black"> <span></span> </label> </div>
-                        <div> <button class="button"> <span>Add to Cart</span> <i class="ms-2 fa fa-long-arrow-right"></i> </button> </div>
+                        <div> <button class="button"> <span>Book Now</span> </button> </div>
                     </div>
                     <div class="col-md-6">
                         <div class="package_image"> <img src="{{url('/uploads/'.$singlePackage->image)}}"> </div>

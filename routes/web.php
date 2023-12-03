@@ -35,6 +35,8 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
 
     Route::get('/',[FrontendHomecontroller::class,'home'])->name('frontend.home');
 
+    Route::get('/search/packages',[FrontendHomeController::class,'searchPackage'])->name('search.package');
+
 
     Route::get('/registration',[FrontendTouristController::class,'registration'])->name('tourist.registration');
     Route::post('/reg-form-store',[FrontendTouristController::class,'store'])->name('tourist.regform.store');
@@ -46,7 +48,12 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
     Route::get('/single-package-view/{id}', [FrontendSinglePackageController::class, 'singlePackage'])->name('single.package.view');
 
     Route::group(['middleware'=>'auth'],function(){
-        Route::get('/profile',[FrontendTouristController::class,'profile'])->name('profile.view');
+
+        Route::get('/profile/view',[FrontendTouristController::class,'profile'])->name('profile.view');
+        Route::get('/profile/edit/{id}',[FrontendTouristController::class,'profileEdit'])->name('profile.edit');
+        Route::put('/profile/update/{id}',[FrontendTouristController::class,'profileUpdate'])->name('profile.update');
+
+
         Route::get('/logout',[FrontendTouristController::class,'logout'])->name('tourist.logout');
         Route::get('/book-now/{id}',[FrontendBookingsController::class,'bookNow'])->name('book.now');
         Route::get('/cancel-bookings/{package_id}',[FrontendBookingsController::class,'cancelBookings'])->name('cancel.bookings');
