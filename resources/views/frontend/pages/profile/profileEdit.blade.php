@@ -3,7 +3,7 @@
 @section('content')
 
 
-<form action="{{route('profile.update',$users->id)}}"method="post">
+<form action="{{route('profile.update',$users->id)}}"method="post" enctype="multipart/form-data">
     @csrf
     @method('put')
     <div class="container">
@@ -15,7 +15,7 @@
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
                                 <div class="image-container">
-                                    <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                                <input type="file" value="{{$users->user_image}}" class="form-control" alt="Upload Image" class="rounded-circle" width="120" name="image">
                                     <div class="middle">
 
                                     </div>
@@ -56,7 +56,7 @@
                                 <label style="font-weight:bold;">Contact info</label>
                             </div>
                             <div class="col-md-8 col-6">
-                                <input type="text" value="" placeholder="Enter contactInfo" name="contactInfo">
+                                <input type="text" value="{{$users->contactInfo}}" placeholder="Enter contactInfo" name="contactInfo">
                             </div>
                         </div>
                         <hr />

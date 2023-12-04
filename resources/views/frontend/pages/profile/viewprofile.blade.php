@@ -11,7 +11,7 @@
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
                                 <div class="image-container">
-                                    <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                                <img src="{{url('/uploads/'. auth()->user()->image)}}" alt="Upload Image" class="rounded-circle" width="150">
                                     <div class="middle">
                                         <a class="btn btn-success" href="{{route('profile.edit',auth()->user()->id)}}">Edit</a>
                                     </div>
@@ -49,10 +49,10 @@
 
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">Contact info</label>
+                                                <label style="font-weight:bold;">Contact Info</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                               
+                                              {{ auth()->user()->contactInfo }} 
                                             </div>
                                         </div>
                                         <hr />

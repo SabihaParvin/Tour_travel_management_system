@@ -42,6 +42,7 @@
         </li>
         </ul>
     </nav>
+    
 
     @include('notify::components.notify')
 

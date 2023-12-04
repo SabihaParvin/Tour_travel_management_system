@@ -77,6 +77,8 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
     Route::get('/users/list',[UserController::class,'list'])->name('users.list');
     Route::get('/users/form',[UserController::class,'form'])->name('users.form');
     Route::post('/users/store',[UserController::class,'store'])->name('users.store');
+    Route::get('/users/delete/{id}',[UserController::class,'delete'])->name('users.delete');
+
     
 
     Route::get('/tourist/list', [TouristController::class, 'list'])->name('tourist.list');

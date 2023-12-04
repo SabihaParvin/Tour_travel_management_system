@@ -40,6 +40,28 @@ class TouristController extends Controller
     public function profileUpdate(Request $request, $userId)
     {
         $users=User::find($userId);
+        // dd($request->all());
+
+        if($users)
+        {
+            $fileName=$users->image;
+
+            if($request->hasFile('image'))
+            {
+              $file=$request->file('image');
+              $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+
+              $file->storeAs('/uploads',$fileName);
+
+            }
+        }
+        $users->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'contactInfo'=>$request->contactInfo,
+            'password'=>bcrypt($request->password),
+            'image'=>$fileName,
+        ]);
 
      notify()->success('Updated successfully.');
     return redirect()->route('profile.view');
@@ -50,11 +72,12 @@ class TouristController extends Controller
     public function store(Request $request)
     {
 
-    //dd($request->all());
+    // dd($request->all());
     User::Create([
         'name'=>$request->name,
         'email'=>$request->email,
         'role'=>'tourist',
+        'contactInfo'=>$request->contactInfo,
         'password'=>bcrypt($request->password),
     ]);
 

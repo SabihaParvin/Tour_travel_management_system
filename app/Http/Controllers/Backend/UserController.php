@@ -39,7 +39,17 @@ class UserController extends Controller
        return redirect()->back()->withErrors('invalid user email or password');
     }
 
-
+    public function delete($userId)
+    {
+        $users=User::find($userId);
+       // dd($userId);
+       if($users)
+       {
+        $users->delete();
+       }
+    notify()->success("User deleted");
+     return redirect()->back();
+    }
 
     public function logout()
     {
@@ -83,6 +93,7 @@ class UserController extends Controller
             'role'=>$request->role,
             'image'=>$fileName,
             'email'=>$request->user_email,
+            'contactInfo'=>$request->contactInfo,
             'password'=>bcrypt($request->user_password),
         ]);
 

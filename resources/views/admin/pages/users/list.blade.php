@@ -11,6 +11,7 @@
       <th scope="col">Name</th>
       <th scope="col">Image</th>
       <th scope="col">Email</th>
+      <th scope="col">Contact No</th>
       <th scope="col">Role</th>
       <th scope="col">Action</th>
     </tr>
@@ -24,11 +25,12 @@
             <img style="border-radius: 60px;" width="7%" src="{{url('/uploads/'.$singleUser->image)}}" alt="image">
         </td>
         <td>{{$singleUser->email}}</td>
+        <td>{{$singleUser->contactInfo}}</td>
         <td>{{$singleUser->role}}</td>
         <td>
             <a class="btn btn-success" href="">View</a>
             <a class="btn btn-warning" href="">Edit</a>
-            <a  class="btn btn-danger"href="">Delete</a>
+            <a  class="btn btn-danger"href="{{route('users.delete',$singleUser->id)}}">Delete</a>
         </td>
 
     </tr>

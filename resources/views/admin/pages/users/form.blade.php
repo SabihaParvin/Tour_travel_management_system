@@ -35,12 +35,9 @@
       <!-- <option value="">Admin</option> -->
       <option value="manager">Manager</option>
       <option value="account">Account</option>
+      <option value="Tourist">Tourist</option>
     </select>
   </div>
-
-
-
-
   <div class="form-group">
     <label for="">Enter Email: </label>
     <input required type="email" class="form-control" placeholder="Enter Email" name="user_email">
@@ -51,7 +48,15 @@
 
   </div>
 
+  <div class="form-group">
+    <label for="">Enter contact Info: </label>
+    <input required type="text" class="form-control" placeholder="Enter contact info" name="contactInfo">
 
+    @error('contactInfo')
+    <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
+  </div>
 
   <div class="form-group">
     <label for="">Enter Password: </label>
