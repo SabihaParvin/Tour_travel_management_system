@@ -1,174 +1,130 @@
-<!doctype html>
-<html class="no-js" lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    @notifyCss
+    <title>Tour & Travel Management System</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
+    <!-- Favicon -->
+    <link href="{{'/frontend/'}}/assets/img/favicon.ico" rel="icon">
 
-	<!-- META DATA -->
-	<meta charset="utf-8">
-	@notifyCss
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
 
-	<!--font-family-->
-	<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    <!-- Libraries Stylesheet -->
+    <link href="{{'/frontend/'}}/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{{'/frontend/'}}/assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
-	<!-- TITLE OF SITE -->
-	<title>Tour & Travel Management System</title>
-
-
-	<!-- favicon img -->
-	<link rel="shortcut icon" type="image/icon" href="{{'/frontend/'}}/assets/logo/favicon.png" />
-
-	<!--font-awesome.min.css-->
-	<link rel="stylesheet" href="{{'/frontend/'}}/assets/css/font-awesome.min.css" />
-
-	<!--animate.css-->
-	<link rel="stylesheet" href="{{'/frontend/'}}/assets/css/animate.css" />
-
-	<!--hover.css-->
-	<link rel="stylesheet" href="{{'/frontend/'}}/assets/css/hover-min.css">
-
-	<!--datepicker.css-->
-	<link rel="stylesheet" href="{{'/frontend/'}}/assets/css/datepicker.css">
-
-	<!--owl.carousel.css-->
-	<link rel="stylesheet" href="{{'/frontend/'}}/assets/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="{{'/frontend/'}}/assets/css/owl.theme.default.min.css" />
-
-	<!-- range css-->
-	<link rel="stylesheet" href="{{'/frontend/'}}/assets/css/jquery-ui.min.css" />
-
-	<!--bootstrap.min.css-->
-	<link rel="stylesheet" href="{{'/frontend/'}}/assets/css/bootstrap.min.css" />
-
-	<!-- bootsnav -->
-	<link rel="stylesheet" href="{{'/frontend/'}}/assets/css/bootsnav.css" />
-
-	<!--style.css-->
-	<link rel="stylesheet" href="{{'/frontend/'}}/assets/css/style.css" />
-
-	<!--responsive.css-->
-	<link rel="stylesheet" href="{{'/frontend/'}}/assets/css/responsive.css" />
-
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{'/frontend/'}}/assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-	<!--[if lte IE 9]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
-			your browser</a> to improve your experience and security.</p>
-		<![endif]-->
+    <!-- Topbar Start -->
+    
+    <!-- Topbar End -->
 
-	@include('frontend.partials.header')
+    @include('frontend.partials.header')
 
-	<!--about-us start -->
-	@include('frontend.partials.aboutus')
-	<!--about-us end -->
+    <!-- Navbar Start -->
 
+    <!-- Navbar End -->
 
 
+    <!-- Carousel Start -->
 
-	<!--galley start top destination -->
-
-
-	<!--/.gallery-->
-	<!--gallery end-->
+    <!-- Carousel End -->
 
 
+    <!-- Booking Start -->
+   
+    <!-- Booking End -->
 
-	<!--packages start-->
+    <div class="container">
 
-	<section id="pack" class="packages">
-		<div class="container">
+        @yield('content')
 
+    </div>
+    <!-- About Start -->
 
-			<!--/.gallery-header-->
-			<div class="packages-content">
-				<div class="row">
-					@yield('content')
-
-
-
+    <!-- About End -->
 
 
-				</div><!--/.row-->
+    <!-- Feature Start -->
 
-			</div><!--/.packages-content-->
-		</div><!--/.container-->
+    <!-- Feature End -->
+    @include('notify::components.notify')
 
-	</section><!--/.packages-->
+    <!-- Destination Start -->
 
-
-	<!--packages end-->
-
-	<!-- testemonial Start -->
-
-	<!-- testemonial End -->
+    <!-- Destination Start -->
 
 
+    <!-- Service Start -->
+
+    <!-- Service End -->
 
 
+    <!-- Packages Start -->
+
+    <!-- Packages End -->
 
 
-	@include('notify::components.notify')
+    <!-- Registration Start -->
+
+    <!-- Registration End -->
 
 
+    <!-- Team Start -->
+ 
+    <!-- Team End -->
 
 
+    <!-- Testimonial Start -->
 
-	@include('frontend.partials.footer')
-
-
-	<script src="{{'/frontend/'}}/assets/js/jquery.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-
-	<!--modernizr.min.js-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <!-- Testimonial End -->
 
 
-	<!--bootstrap.min.js-->
-	<script src="{{'/frontend/'}}/assets/js/bootstrap.min.js"></script>
+    <!-- Blog Start -->
+ 
+    <!-- Blog End -->
 
-	<!-- bootsnav js -->
-	<script src="{{'/frontend/'}}/assets/js/bootsnav.js"></script>
 
-	<!-- jquery.filterizr.min.js -->
-	<script src="{{'/frontend/'}}/assets/js/jquery.filterizr.min.js"></script>
+    <!-- Footer Start -->
+    
+    <!-- Footer End -->
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
-	<!--jquery-ui.min.js-->
-	<script src="{{'/frontend/'}}/assets/js/jquery-ui.min.js"></script>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-	<!-- counter js -->
-	<script src="{{'/frontend/'}}/assets/js/jquery.counterup.min.js"></script>
-	<script src="{{'/frontend/'}}/assets/js/waypoints.min.js"></script>
+    @include('frontend.partials.footer')
 
-	<!--owl.carousel.js-->
-	<script src="{{'/frontend/'}}/assets/js/owl.carousel.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{'/frontend/'}}/assets/lib/easing/easing.min.js"></script>
+    <script src="{{'/frontend/'}}/assets/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{{'/frontend/'}}/assets/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="{{'/frontend/'}}/assets/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="{{'/frontend/'}}/assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-	<!-- jquery.sticky.js -->
-	<script src="{{'/frontend/'}}/assets/js/jquery.sticky.js"></script>
+    <!-- Contact Javascript File -->
+    <script src="{{'/frontend/'}}/assets/mail/jqBootstrapValidation.min.js"></script>
+    <script src="{{'/frontend/'}}/assets/mail/contact.js"></script>
 
-	<!--datepicker.js-->
-	<script src="{{'/frontend/'}}/assets/js/datepicker.js"></script>
-
-	<!--Custom JS-->
-	<script src="{{'/frontend/'}}/assets/js/custom.js"></script>
-
-	@notifyJs
-
+    <!-- Template Javascript -->
+    <script src="{{'/frontend/'}}/assets/js/main.js"></script>
+    @notifyJs
 </body>
 
 </html>

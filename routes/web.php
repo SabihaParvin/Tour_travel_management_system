@@ -38,6 +38,7 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
     Route::get('/search/packages',[FrontendHomeController::class,'searchPackage'])->name('search.package');
 
 
+
     Route::get('/registration',[FrontendTouristController::class,'registration'])->name('tourist.registration');
     Route::post('/reg-form-store',[FrontendTouristController::class,'store'])->name('tourist.regform.store');
 

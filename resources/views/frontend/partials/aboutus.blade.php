@@ -1,29 +1,28 @@
-<section id="home" class="about-us">
-			<div class="container">
-				<div class="about-us-content">
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="single-about-us">
-								<div class="about-us-txt">
-									<h2>
-										Explore the Beauty of the Beautiful World 
 
-									</h2>
-									<div class="about-btn">
-										<button  class="about-view">
-											explore now
-										</button>
-									</div><!--/.about-btn-->
-								</div><!--/.about-us-txt-->
-							</div><!--/.single-about-us-->
-						</div><!--/.col-->
-						<div class="col-sm-0">
-							<div class="single-about-us">
-								
-							</div><!--/.single-about-us-->
-						</div><!--/.col-->
-					</div><!--/.row-->
-				</div><!--/.about-us-content-->
-			</div><!--/.container-->
-
-		</section><!--/.about-us-->
+<div class="container-fluid py-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-6" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="{{'/frontend/'}}/assets/img/about.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 pt-5 pb-lg-5">
+                    <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
+                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h6>
+                        <h1 class="mb-3">We Provide Best Tour Packages In Your Budget</h1>
+                        <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <img class="img-fluid" src="{{'/frontend/'}}/assets/img/about-1.jpg" alt="">
+                            </div>
+                            <div class="col-6">
+                                <img class="img-fluid" src="{{'/frontend/'}}/assets/img/about-2.jpg" alt="">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
