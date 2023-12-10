@@ -75,59 +75,41 @@
 <!-- Destination End -->
 
 <!-- packages Start -->
-<div class="gallary-header text-center">
-    <h2>
-        Packages
-    </h2>
 
-</div>
-@foreach($packages as $package)
-<div class="col-md-4 col-sm-6">
-    <div class="single-package-item">
-
-        <a href="{{route('single.package.view',$package->id)}}"><img src="{{url('/uploads/'.$package->image)}}" alt="package-place"></a>
-        <div class="single-package-item-txt">
-            <h3>{{$package->name}} <span class="pull-right">{{$package->price}}.BDT</span></h3>
-            <div class="packages-para">
-                <p>
-                    <span>
-                        <i class="fa fa-angle-right"></i>Description: {{$package->description}}
-                    </span>
-                </p>
-                <p>
-                    <span>
-                        <i class="fa fa-angle-right"></i> Start Date: {{$package->start_date}}
-                    </span>
-                </p>
-                <p>
-                    <span>
-                        <i class="fa fa-angle-right"></i>End Date: {{$package->end_date}}
-                    </span>
-                </p>
-            </div><!--/.packages-para-->
-            <div class="packages-review">
-                <p>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <span>254 reviews</span>
-                </p>
-
-            </div><!--/.packages-review-->
-            <div class="about-btn">
-                <a class="btn btn-primary" href="{{route('book.now',$package->id)}}">
-                    Book now
-                </a>
-            </div><!--/.about-btn-->
-        </div><!--/.single-package-item-txt-->
-    </div><!--/.single-package-item-->
-
-</div><!--/.col-->
-@endforeach
-
-    <!-- packages End -->
+<div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Packages</h6>
+                <h1>Pefect Tour Packages</h1>
+            </div>
+           
+            <div class="row">
+             @foreach($packages as $package)
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="{{url('/uploads/'.$package->image)}}" alt="package-place">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{$package->name}}</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i></small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i></small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="{{route('single.package.view',$package->id)}}">Discover amazing places of Bangladesh with us</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">{{$package->price}}.BDT</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                @endforeach 
+            </div>
+        </div>
+    </div>
+   
+<!-- packages End -->
 
      <!-- Review Start -->
     <div class="container-fluid py-5">

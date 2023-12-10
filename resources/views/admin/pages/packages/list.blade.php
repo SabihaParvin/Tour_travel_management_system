@@ -28,8 +28,8 @@
     <th scope="row">{{$key+1}}</th>
       <td>{{$package->name}}</td>
       <td>
-            <img style="border-radius: 100px;" width="20%" src="{{url('/uploads/'.$package->image)}}" alt="image">
-        </td>
+         <img style="border-radius: 100px;" width="20%" src="{{url('/uploads/'.$package->image)}}" alt="image">
+      </td>
       <td>{{$package->description}}</td>
       <td>{{$package->price}}.BDT</td>
       <td>{{$package->start_date}}</td>

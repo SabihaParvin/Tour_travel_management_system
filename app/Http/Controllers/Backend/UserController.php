@@ -50,6 +50,36 @@ class UserController extends Controller
     notify()->success("User deleted");
      return redirect()->back();
     }
+    public function edit($userId)
+    {
+        {
+            $users=User::find($userId);
+            return view('admin.pages.users.edit',compact('users'));    
+        }
+    }
+
+    Public function update(Request $request,$userId)
+    {
+         $users=User::find($userId);
+        
+        $fileName=$users->image;
+        if($request->hasFile('user_image'))
+        {
+            $file=$request->file('user_image');
+            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$fileName);
+
+        }
+        $users->Update([
+            'name'=>$request->user_name,
+            'image'=>$fileName,
+            'email'=>$request->user_email,
+            'contactInfo'=>$request->contactInfo,
+            
+        ]); 
+        notify()->success('users updated successfully.');
+        return redirect()->route('users.list');
+}
 
     public function logout()
     {
@@ -87,7 +117,6 @@ class UserController extends Controller
 
         }
 
-       
         User::create([
             'name'=>$request->user_name,
             'role'=>$request->role,

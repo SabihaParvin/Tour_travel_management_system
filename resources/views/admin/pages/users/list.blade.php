@@ -7,7 +7,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">Serial no</th>
       <th scope="col">Name</th>
       <th scope="col">Image</th>
       <th scope="col">Email</th>
@@ -28,8 +28,7 @@
         <td>{{$singleUser->contactInfo}}</td>
         <td>{{$singleUser->role}}</td>
         <td>
-            <a class="btn btn-success" href="">View</a>
-            <a class="btn btn-warning" href="">Edit</a>
+            <a class="btn btn-warning" href="{{route('user.edit',$singleUser->id)}}">Edit</a>
             <a  class="btn btn-danger"href="{{route('users.delete',$singleUser->id)}}">Delete</a>
         </td>
 

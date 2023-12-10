@@ -79,12 +79,13 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
     Route::get('/users/form',[UserController::class,'form'])->name('users.form');
     Route::post('/users/store',[UserController::class,'store'])->name('users.store');
     Route::get('/users/delete/{id}',[UserController::class,'delete'])->name('users.delete');
-
+    Route::get('/users/edit/{id}',[UserController::class,'edit'])->name('user.edit');
+    Route::put('/users/update/{id}',[UserController::class,'update'])->name('user.update');
     
 
     Route::get('/tourist/list', [TouristController::class, 'list'])->name('tourist.list');
-    Route::get('/tourist/form', [TouristController::class, 'form'])->name('tourist.form');
-    Route::post('/tourist/store', [TouristController::class, 'store'])->name('tourist.store');
+    //Route::get('/tourist/form', [TouristController::class, 'form'])->name('tourist.form');
+    //Route::post('/tourist/store', [TouristController::class, 'store'])->name('tourist.store');
 
 
     Route::get('/packages/list', [PackageController::class, 'list'])->name('packages.list');
@@ -125,8 +126,8 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
 
     Route::get('/blog/list', [BlogController::class, 'list'])->name('blog.list');
     Route::get('/blog/form', [BlogController::class, 'form'])->name('blog.form');
-    //Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
+    Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
 
-        });
     });
-});
+   });
+ });

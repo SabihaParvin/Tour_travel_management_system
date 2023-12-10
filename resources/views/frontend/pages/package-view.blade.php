@@ -3,27 +3,44 @@
 @section('content')
 
 
-<div class="container">
-    <div class="row dd-flex justify-content-center">
-        <div class="col-md-8">
-            <div class="card px-3">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="d-flex flex-row align-items-center"> <i></i>
-                         <span class="fw-bold ms-1 fs-5">{{$singlePackage->name}}</span> </div>
-                        <h1 class="fs-1 ms-1 mt-3">{{$singlePackage->description}}</h1>
-                        <div class="ms-1"> <span>{{$singlePackage->price}}.BDT</span> </div>
-                        <div class="ms-1"> <span>{{$singlePackage->start_date}} </span> </div>
-                        <div class="ms-1"> <span>{{$singlePackage->end_date}} </span> </div>
-                        
-                    </div>
-                    <div class="col-md-6">
-                        <div class="package_image"> <img src="{{url('/uploads/'.$singlePackage->image)}}"> </div>
-                    </div>
-                </div>
+<div class="single-package-item-txt">
+
+    <img src="{{url('/uploads/'.$singlePackage->image)}}" alt="package-place">
+
+            <h3>{{$singlePackage->name}} <span class="pull-right">{{$singlePackage->price}}.BDT</span></h3>
+            <div class="packages-para">
+                <p>
+                    <span>
+                        <i class="fa fa-angle-right"></i>Description: {{$singlePackage->description}}
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        <i class="fa fa-angle-right"></i> Start Date: {{$singlePackage->start_date}}
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        <i class="fa fa-angle-right"></i>End Date: {{$singlePackage->end_date}}
+                    </span>
+                </p>
+            </div><!--/.packages-para-->
+            <div class="packages-review">
+                <p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <span>254 reviews</span>
+                </p>
+
+            </div><!--/.packages-review-->
+            <div class="about-btn">
+                <a class="btn btn-primary" href="{{route('book.now',$singlePackage->id)}}">
+                    Book now
+                </a>
             </div>
-        </div>
-    </div>
-</div>
 
 @endsection
+

@@ -2,19 +2,27 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use App\Models\Tourist;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
 class TouristController extends Controller
 {
     public function list(){
 
-    $tourists=Tourist::paginate(3);
+    $tourists=User::paginate(3);
+    $tourists=User::where('role','tourist')->get() ;
+    
     return view('admin.pages.tourist.list',compact('tourists'));
     }
-    public function form(){
+
+
+
+
+
+
+    /*public function form(){
         return view('admin.pages.tourist.form');
         }
         public function store(Request $request){
@@ -45,5 +53,5 @@ class TouristController extends Controller
            notify()->success('Laravel Notify is awesome!');
 
            return redirect()->back()->witherrors($valided);
-    }
+    }*/
 }

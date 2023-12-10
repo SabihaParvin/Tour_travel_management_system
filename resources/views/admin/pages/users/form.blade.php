@@ -5,10 +5,6 @@
 
 <h1>Create new User</h1>
 
-
-
-
-
 <form action="{{route('users.store')}}" method="post" enctype="multipart/form-data">
 
   @if(session()->has('myError'))
@@ -34,7 +30,6 @@
     <select required class="form-control" name="role" id="">
       <!-- <option value="">Admin</option> -->
       <option value="manager">Manager</option>
-      <option value="account">Account</option>
       <option value="Tourist">Tourist</option>
     </select>
   </div>
