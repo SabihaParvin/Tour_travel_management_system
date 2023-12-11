@@ -24,7 +24,9 @@
     <tr>
       <th scope="row">{{$key+1}}</th>
       <td>{{$tourist->name}}</td>
-      <td>{{$tourist->image}}</td>
+      <td>
+            <img style="border-radius: 60px;" width="7%" src="{{url('/uploads/'.$tourist->image)}}" alt="image">
+        </td>
       <td>{{$tourist->email}}</td>
       <td>{{$tourist->contactInfo}}</td>
       <td>

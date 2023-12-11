@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{route('location.store')}}"method="post">
+<form action="{{route('location.store')}}"method="post" enctype="multipart/form-data">
     @csrf
   <div class="form-group">
     <label for="">Enter Location Name:</label>
@@ -16,7 +16,7 @@
 
   <div class="form-group">
     <label for="">Upload Image: </label>
-    <input name="user_image" type="file" class="form-control">
+    <input name="image" type="file" class="form-control">
   </div>
 
 

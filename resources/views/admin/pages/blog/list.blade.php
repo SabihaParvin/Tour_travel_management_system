@@ -27,7 +27,7 @@
       <td>{{$blog->description}}</td>
       <td>
         <a class="btn btn-success" href="">view</a>
-        <a class="btn btn-warning" href="">Edit</a>
+        <a class="btn btn-warning" href="">Update</a>
         <a class="btn btn-danger" href="">Delete</a>
       </td>
 

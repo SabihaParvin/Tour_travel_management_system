@@ -79,6 +79,13 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+.notify{
+  z-index:1000000;
+  position:absolute;
+  top:5%;
+
+}
+
 *,
 *::before,
 *::after {

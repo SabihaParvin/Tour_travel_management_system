@@ -56,8 +56,11 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
 
 
         Route::get('/logout',[FrontendTouristController::class,'logout'])->name('tourist.logout');
+
+
         Route::get('/book-now/{id}',[FrontendBookingsController::class,'bookNow'])->name('book.now');
         Route::get('/cancel-bookings/{package_id}',[FrontendBookingsController::class,'cancelBookings'])->name('cancel.bookings');
+       
     });
 
     //admin panel routes
@@ -107,6 +110,8 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
     Route::get('/bookings/list', [BookingsController::class, 'list'])->name('bookings.list');
     Route::get('/bookings/form', [BookingsController::class, 'form'])->name('bookings.form');
     //Route::post('/bookings/store', [BookingsController::class, 'store'])->name('bookings.store');
+    Route::get('/confirm-bookings/{id}',[BookingsController::class,'confirmBooking'])->name('confirm.booking');
+    Route::get('/reject-bookings/{id}',[BookingsController::class,'rejectBooking'])->name('reject.booking');
 
     Route::get('/payment/list', [PaymentController::class, 'list'])->name('payment.list');
     Route::get('/payment/form', [PaymentController::class, 'form'])->name('payment.form');

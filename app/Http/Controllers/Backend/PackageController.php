@@ -104,8 +104,8 @@ class PackageController extends Controller
                 'end_date'=>$request->end_date,
                ]);
                
-               
-               return redirect()->back()->with('message','package created successfully.');
+               notify()->success('Package updated successfully.');
+               return redirect()->back();
     
             }
     }
