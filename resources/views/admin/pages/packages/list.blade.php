@@ -34,7 +34,6 @@
       <td>{{$package->price}}.BDT</td>
       <td>{{$package->start_date}}</td>
       <td>{{$package->end_date}}</td>
-     
       <td>
         <a class="btn btn-success" href="{{route('package.view', $package->id)}}">view</a>
         <a class="btn btn-warning" href="{{route('package.edit', $package->id)}}">Edit</a>

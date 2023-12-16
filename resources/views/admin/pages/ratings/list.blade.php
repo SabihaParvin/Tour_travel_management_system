@@ -5,32 +5,24 @@
 <h1>Ratings</h1>
 <table class="table table-light">
   <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+  <tr>
+      <th scope="col">Sl no</th>
+      <th scope="col">User Id</th>
+      <th scope="col">package id</th>
+      <th scope="col">Content</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>
+        <a class="btn btn-warning" href="">Update</a>
+        <a class="btn btn-danger" href="">Delete</a>
+      </td>
   </tbody>
 </table>
 @endsection

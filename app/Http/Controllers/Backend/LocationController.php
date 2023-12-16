@@ -38,7 +38,7 @@ class LocationController extends Controller
 
         ]);
         notify()->success("Location created successfully");
-        return redirect()-route('location.list');
+        return redirect()->route('location.list');
     }
 }
 

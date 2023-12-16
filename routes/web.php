@@ -15,10 +15,11 @@ use App\Http\Controllers\Backend\RatingsController;
 use App\Http\Controllers\Backend\TouristController;
 use App\Http\Controllers\Backend\BookingsController;
 use App\Http\Controllers\Backend\LocationController;
-use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePackageController;
+use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
-use App\Http\Controllers\Frontend\BookingsController as FrontendBookingsController;
 use App\Http\Controllers\Frontend\TouristController as FrontendTouristController;
+use App\Http\Controllers\Frontend\BookingsController as FrontendBookingsController;
+use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePackageController;
 
 
 /*
@@ -54,12 +55,31 @@ use App\Http\Controllers\Frontend\TouristController as FrontendTouristController
         Route::get('/profile/edit/{id}',[FrontendTouristController::class,'profileEdit'])->name('profile.edit');
         Route::put('/profile/update/{id}',[FrontendTouristController::class,'profileUpdate'])->name('profile.update');
 
+        
+
 
         Route::get('/logout',[FrontendTouristController::class,'logout'])->name('tourist.logout');
 
 
         Route::get('/book-now/{id}',[FrontendBookingsController::class,'bookNow'])->name('book.now');
         Route::get('/cancel-bookings/{package_id}',[FrontendBookingsController::class,'cancelBookings'])->name('cancel.bookings');
+        Route::get('/make-payment/{id}',[FrontendTouristController::class,'makePayment'])->name('make.payment');
+
+        
+        
+        // SSLCOMMERZ Start
+        Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+        Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+        
+        Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+        Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+        
+        Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+        Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+        Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+        
+        Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+        //SSLCOMMERZ END
        
     });
 

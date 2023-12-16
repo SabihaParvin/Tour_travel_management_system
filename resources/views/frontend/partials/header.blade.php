@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                    <p><i class="fa fa-envelope mr-2"></i>tripper@gmail.com</p>
                     <p class="text-body px-3">|</p>
-                    <p><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+8801772078684</p>
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
@@ -39,7 +39,7 @@
     <div class="container-lg position-relative p-0" style="z-index: 12;">
         <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
             <a href="" class="navbar-brand">
-                <h1 class="m-0 text-primary"><span class="text-dark">TRAVEL</span>ER</h1>
+                <h1 class="m-0 text-primary"><span class="text-dark">TRIPP</span>ER</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>

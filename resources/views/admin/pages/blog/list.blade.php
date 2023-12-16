@@ -32,7 +32,7 @@
       </td>
 
     </tr>
-@endforeach
+ @endforeach
   </tbody>
-</table>
-@endsection
+  </table>
+ @endsection

@@ -41,33 +41,6 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="{{'/frontend/'}}/assets/img/destination-4.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">India</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="{{'/frontend/'}}/assets/img/destination-5.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">South Africa</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="{{'/frontend/'}}/assets/img/destination-6.jpg" alt="">
-                        <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">Indonesia</h5>
-                            <span>100 Cities</span>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -82,7 +55,12 @@
                 <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Packages</h6>
                 <h1>Pefect Tour Packages</h1>
             </div>
-           
+            <style>
+            .button-container{
+                text-align:center;
+                margin-top:50px
+            }
+            </style>
             <div class="row">
              @foreach($packages as $package)
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -108,7 +86,7 @@
             </div>
         </div>
     </div>
-   
+  
 <!-- packages End -->
 
      <!-- Review Start -->
