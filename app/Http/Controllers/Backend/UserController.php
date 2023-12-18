@@ -4,16 +4,19 @@ namespace App\Http\Controllers\Backend;
 
 
 use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-    public function loginform(){
+    public function loginform()
+    {
       return view('admin.pages.login');  
     }
-    public function loginpost(Request $request){
+    public function loginpost(Request $request)
+    {
         
         $validate=Validator::make($request->all(),
         [
@@ -30,7 +33,8 @@ class UserController extends Controller
 
         // if(auth()->attempt($credentials))
 
-        $login=auth()->attempt($credentials);
+        $login=auth()->guard('admin')->attempt($credentials);
+        //dd($credentials);
         if($login)
         {
            return redirect()->route('dashboard');
@@ -88,7 +92,7 @@ class UserController extends Controller
     }
 
     public function list(){
-        $users=User::all();
+        $users=Admin::all();
         return view('admin.pages.users.list',compact('users'));
     }
     public function form(){
@@ -117,7 +121,7 @@ class UserController extends Controller
 
         }
 
-        User::create([
+        Admin::create([
             'name'=>$request->user_name,
             'role'=>$request->role,
             'image'=>$fileName,

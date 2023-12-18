@@ -10,7 +10,7 @@
       <th scope="col">Package ID</th>
       <th scope="col">Date</th>
       <th scope="col">Status</th>
-      <th scope="col">action</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -28,6 +28,7 @@
     <a class="btn btn-warning" href="{{route('confirm.booking',$booking->id)}}">Approve</a>
     <a class="btn btn-danger" href="{{route('reject.booking',$booking->id)}}">Reject</a>
   </td>
+ 
  @endif
 </tr>
 @endforeach

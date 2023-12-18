@@ -32,7 +32,7 @@ class BookingsController extends Controller
         return redirect()->back();
     }
 
-    public function reject($id)
+    public function rejectBooking($id)
     {
         $booking=Booking::find($id);
         if($booking)

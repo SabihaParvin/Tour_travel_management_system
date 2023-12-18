@@ -28,7 +28,7 @@
     <th scope="row">{{$key+1}}</th>
       <td>{{$package->name}}</td>
       <td>
-         <img style="border-radius: 100px;" width="20%" src="{{url('/uploads/'.$package->image)}}" alt="image">
+         <img style="border-radius: 500px;" width="50%" src="{{url('/uploads/'.$package->image)}}" alt="image">
       </td>
       <td>{{$package->description}}</td>
       <td>{{$package->price}}.BDT</td>

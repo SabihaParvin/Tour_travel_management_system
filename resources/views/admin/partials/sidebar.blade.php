@@ -53,6 +53,10 @@
                                 <div class="sb-nav-link-icon"><i class="bi bi-images"></i></div>
                                 Blog
                             </a>
+                            <a class="nav-link" href="">
+                                <div class="sb-nav-link-icon"><i class="bi bi-envelope"></i></div>
+                                Contact
+                            </a>
                         </div>
                     </div>
                 </nav>

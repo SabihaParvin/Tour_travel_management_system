@@ -38,6 +38,8 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
 
     Route::get('/search/packages',[FrontendHomeController::class,'searchPackage'])->name('search.package');
 
+    Route::get('/aboutUs',[FrontendHomeController::class,'aboutUs'])->name('about.us');
+    Route::get('/contactUs',[FrontendHomeController::class,'contactUs'])->name('contact.us');
 
 
     Route::get('/registration',[FrontendTouristController::class,'registration'])->name('tourist.registration');
@@ -45,8 +47,9 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
 
     Route::get('/login',[FrontendTouristController::class,'login'])->name('tourist.login');
     Route::post('/login',[FrontendTouristController::class,'loginpost'])->name('tourist.login.post');
-    
 
+    
+    Route::get('/package-view',[FrontendSinglePackageController::class,'packageView'])->name('Frontend.PackageView');
     Route::get('/single-package-view/{id}', [FrontendSinglePackageController::class, 'singlePackage'])->name('single.package.view');
 
     Route::group(['middleware'=>'auth'],function(){
@@ -90,9 +93,9 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
     Route::get('/login', [UserController::class, 'loginform'])->name('admin.login');
     Route::post('/login-form-post', [UserController::class, 'loginpost'])->name('admin.login.post');
 
-    Route::group(['middleware' => 'auth'], function () {
+    Route::group(['middleware' => 'admin'], function () {
 
-        Route::group(['middleware' => 'checkAdmin'], function () {
+       // Route::group(['middleware' => 'checkAdmin'], function () {
 
     Route::get('/logout',[UserController::class,'logout'])->name('admin.logout');
 
@@ -155,4 +158,3 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
 
     });
    });
- });

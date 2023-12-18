@@ -16,6 +16,11 @@ class SinglePackageController extends Controller
     $singlePackage = Package::find($package_id);
 
     // dd($singlePackage);
-    return view('frontend.pages.package-view', compact('singlePackage','packages'));
+    return view('frontend.pages.package.singlePackageView', compact('singlePackage','packages'));
+  }
+  public function packageView()
+  {
+    $packages = Package::all();
+    return view('frontend.pages.package.packages',compact('packages'));
   }
 }

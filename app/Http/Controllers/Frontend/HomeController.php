@@ -27,5 +27,15 @@ class HomeController extends Controller
     }
     return view('frontend.pages.search.searchPackage',compact('packages'));
   }
+   public function aboutUs()
+  {
+    return view('frontend.pages.aboutUs');  
+  }
+
+  public function contactUs()
+  {
+    return view('frontend.pages.contactUs');  
+  }
+ 
  
 }
