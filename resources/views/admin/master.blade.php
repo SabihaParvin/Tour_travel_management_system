@@ -37,7 +37,7 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         
                         <li><a class="dropdown-item" href="#">Logout</a></li>-->
-            <li><a href="{{route('admin.logout')}}" class="btn btn-primary">{{auth()->user()->name}} |Logout</a></li>
+            <li><a href="{{route('admin.logout')}}" class="btn btn-primary">{{auth()->guard('admin')->user()->name}} |Logout</a></li>
         </ul>
         </li>
         </ul>

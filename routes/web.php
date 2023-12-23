@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\TouristController;
 use App\Http\Controllers\Backend\BookingsController;
 use App\Http\Controllers\Backend\LocationController;
 use App\Http\Controllers\SslCommerzPaymentController;
+use App\Http\Controllers\Frontend\ContactController as FrontendContactController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\TouristController as FrontendTouristController;
 use App\Http\Controllers\Frontend\BookingsController as FrontendBookingsController;
@@ -58,8 +59,8 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
         Route::get('/profile/edit/{id}',[FrontendTouristController::class,'profileEdit'])->name('profile.edit');
         Route::put('/profile/update/{id}',[FrontendTouristController::class,'profileUpdate'])->name('profile.update');
 
-        
-
+        Route::get('contact/list',[FrontendContactController::class,'list'])->name('contact.list');
+        Route::post('contact/store',[FrontendContactController::class,'store'])->name('contact.store');
 
         Route::get('/logout',[FrontendTouristController::class,'logout'])->name('tourist.logout');
 
@@ -156,5 +157,7 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
     Route::get('/blog/form', [BlogController::class, 'form'])->name('blog.form');
     Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
 
+    Route::get('/contact/list', [BlogController::class, 'contact'])->name('contact.list');
+    
     });
    });

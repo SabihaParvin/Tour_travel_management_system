@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\Contact;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class BlogController extends Controller
 {
@@ -38,4 +39,10 @@ class BlogController extends Controller
         notify()->success('Blog uploaded successfully');
         return redirect()->back();
     }
+    public function contact()
+    {
+        $contacts=Contact::all();
+        return view('admin.pages.contact',compact('contacts'));
+    }
+
 }

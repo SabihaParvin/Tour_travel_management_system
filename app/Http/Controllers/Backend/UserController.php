@@ -17,6 +17,7 @@ class UserController extends Controller
     }
     public function loginpost(Request $request)
     {
+        // dd($request->all());
         
         $validate=Validator::make($request->all(),
         [
@@ -92,7 +93,7 @@ class UserController extends Controller
     }
 
     public function list(){
-        $users=Admin::all();
+        $users=User::all();
         return view('admin.pages.users.list',compact('users'));
     }
     public function form(){

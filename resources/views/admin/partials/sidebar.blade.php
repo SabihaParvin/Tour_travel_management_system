@@ -53,7 +53,7 @@
                                 <div class="sb-nav-link-icon"><i class="bi bi-images"></i></div>
                                 Blog
                             </a>
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="{{route('contact.list')}}">
                                 <div class="sb-nav-link-icon"><i class="bi bi-envelope"></i></div>
                                 Contact
                             </a>

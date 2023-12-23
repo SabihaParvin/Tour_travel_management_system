@@ -16,7 +16,7 @@
 
             <h3 class="mb-5">Sign in</h3>
             <form action="{{route('admin.login.post')}}"method="post">
-            @csrf
+             @csrf
 
             <div class="form-outline mb-4">
               <input required name="email" type="email" id="typeEmailX-2" class="form-control form-control-lg" />
