@@ -24,8 +24,10 @@
     <link href="{{'/frontend/'}}/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="{{'/frontend/'}}/assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
+    <!-- Customized Bootstrap Stylesheet 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
     <link href="{{'/frontend/'}}/assets/css/style.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -117,6 +119,11 @@
     <script src="{{'/frontend/'}}/assets/lib/tempusdominus/js/moment.min.js"></script>
     <script src="{{'/frontend/'}}/assets/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="{{'/frontend/'}}/assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
     <!-- Contact Javascript File -->
     <script src="{{'/frontend/'}}/assets/mail/jqBootstrapValidation.min.js"></script>

@@ -14,33 +14,18 @@
             <h1>Explore Top Destination</h1>
         </div>
         <div class="row">
+        @foreach($locations as $location) 
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid" src="{{'/frontend/'}}/assets/img/destination-1.jpg" alt="">
+                    <img class="img-fluid" src="{{url('/uploads/'.$location->image)}}" alt="">
                     <a class="destination-overlay text-white text-decoration-none" href="">
-                        <h5 class="text-white">United States</h5>
+                        <h5 class="text-white">{{$location->name}}</h5>
                         <span>100 Cities</span>
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid" src="{{'/frontend/'}}/assets/img/destination-2.jpg" alt="">
-                    <a class="destination-overlay text-white text-decoration-none" href="">
-                        <h5 class="text-white">United Kingdom</h5>
-                        <span>100 Cities</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid" src="{{'/frontend/'}}/assets/img/destination-3.jpg" alt="">
-                    <a class="destination-overlay text-white text-decoration-none" href="">
-                        <h5 class="text-white">Australia</h5>
-                        <span>100 Cities</span>
-                    </a>
-                </div>
-            </div>
+            @endforeach
+           
         </div>
     </div>
 </div>

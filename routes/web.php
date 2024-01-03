@@ -39,6 +39,7 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
 
     Route::get('/search/packages',[FrontendHomeController::class,'searchPackage'])->name('search.package');
 
+    Route::get('/location/list',[FrontendHomeController::class,'location'])->name('frontend.location');
     Route::get('/aboutUs',[FrontendHomeController::class,'aboutUs'])->name('about.us');
     Route::get('/contactUs',[FrontendHomeController::class,'contactUs'])->name('contact.us');
 
@@ -52,6 +53,7 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
     
     Route::get('/package-view',[FrontendSinglePackageController::class,'packageView'])->name('Frontend.PackageView');
     Route::get('/single-package-view/{id}', [FrontendSinglePackageController::class, 'singlePackage'])->name('single.package.view');
+
 
     Route::group(['middleware'=>'auth'],function(){
 
@@ -67,8 +69,8 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
 
         Route::get('/logout',[FrontendTouristController::class,'logout'])->name('tourist.logout');
 
-
-        Route::get('/book-now/{id}',[FrontendBookingsController::class,'bookNow'])->name('book.now');
+        //Route::get('/book-now',[FrontendBookingsController::class,'bookNow'])->name('book.now');
+        Route::post('/booking-Form-store/{id}',[FrontendBookingsController::class,'bookstore'])->name('book.store');
         Route::get('/cancel-bookings/{package_id}',[FrontendBookingsController::class,'cancelBookings'])->name('cancel.bookings');
         Route::get('/make-payment/{id}',[FrontendTouristController::class,'makePayment'])->name('make.payment');
 

@@ -182,13 +182,13 @@ class SslCommerzPaymentController extends Controller
                 Here you can also sent sms or email for successfull transaction to customer
                 */
                $order_details->update([
-               'payment_status'=>$request->status,
-               'status'=>'confirm'
+               'payment_status'=>'confirm',
+               //'status'=>'confirm'
                ]);
                notify()->success('payment successfull');
-                return redirect()->back();
+                return redirect()->route('profile.view');
             }
-        } else if ($order_details->status == 'Processing' || $order_details->status == 'Complete') {
+        } else if ($order_details->status == 'Processing' || $order_details->status == 'Confirm') {
             /*
              That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to udate database.
              */

@@ -109,7 +109,7 @@ class TouristController extends Controller
 
         if(auth()->attempt($credentials))
         {
-            notify()->success('Login Successfull.');
+            notify()->success('Login Successfull');
             return redirect()->route('frontend.home');
         }
         
@@ -122,7 +122,7 @@ class TouristController extends Controller
         
         $booking=Booking::find($id);
         $this->payment($booking);
-        return redirect()->back();
+        return redirect()->route('profile.view');
     }
 
 
@@ -130,7 +130,7 @@ class TouristController extends Controller
     {
         //dd($payment);
         $post_data = array();
-        $post_data['total_amount'] = (int)$payment->price; # You cant not pay less than 10
+        $post_data['total_amount'] = (int)$payment->amount; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = $payment->transanction_id; // tran_id must be unique
 
@@ -185,7 +185,7 @@ class TouristController extends Controller
     public function logout()
     {
         auth()->logout();
-        notify()->success('Logout Successfull.');    
+        notify()->success('Logout Successfull');    
         return redirect()->route('frontend.home');
     }
 

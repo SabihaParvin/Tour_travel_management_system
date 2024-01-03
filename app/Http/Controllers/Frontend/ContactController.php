@@ -25,4 +25,5 @@ class ContactController extends Controller
         notify()->success('Message recieved. You will get email soon!');
         return redirect()->route('frontend.home');
     }
+    
 }

@@ -103,6 +103,6 @@ class PackageController extends Controller
         ]);
 
         notify()->success('Package created successfully.');
-        return redirect()->back();
+        return redirect()->route('packages.list');
     }
 }

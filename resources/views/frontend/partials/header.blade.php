@@ -50,12 +50,7 @@
                     <a href="{{route('about.us')}}" class="nav-item nav-link">About</a>
                     <a href="service.html" class="nav-item nav-link">Services</a>
                     <a href="{{route('Frontend.PackageView')}}" class="nav-item nav-link">Packages</a>
-                    <div class="nav-item dropdown">
-                        <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Location</a>
-                        <div class="dropdown-menu border-0 rounded-0 m-0">
-                            <a href="" class="dropdown-item">Spots</a>
-                        </div>
-                    </div>
+                    <a href="{{route('frontend.location')}}" class="nav-item nav-link">Location</a>
                     <a href="{{route('contact.us')}}" class="nav-item nav-link">Contact</a>
 
 

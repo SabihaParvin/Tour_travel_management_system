@@ -3,7 +3,7 @@
 @section('content')
 
 
-
+<div class="container">
 <form action="{{route('packages.store')}}" method="post" enctype="multipart/form-data">
   @csrf
   <div class="form-group">
@@ -50,5 +50,5 @@
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
+</div>
 @endsection

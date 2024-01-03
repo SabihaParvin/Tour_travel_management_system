@@ -13,7 +13,7 @@
       <th scope="col">Title</th>
       <th scope="col">Image</th>
       <th scope="col">Description</th>
-      <th scope="col">Blog</th>
+      <th scope="col">video</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -23,11 +23,11 @@
     <th scope="row">{{$key+1}}</th>
       <td>{{$blog->title}}</td>
       <td>
-         <img style="border-radius: 100px;" width="20%" src="{{url('/uploads/'.$blog->image)}}" alt="image">
+         <img style="border-radius: 100px;" width="20%" src="{{url('/'.$blog->image_path)}}" alt="image">
       </td>
       <td>{{$blog->description}}</td>
       <td>
-         <img style="border-radius: 100px;" width="20%" src="{{url('/uploads/'.$blog->blog)}}" alt="blog">
+         <img style="border-radius: 100px;" width="20%" src="{{url('/'.$blog->video_path)}}" alt="video">
       </td>
       <td>
         <a class="btn btn-success" href="">view</a>

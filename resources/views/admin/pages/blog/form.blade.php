@@ -10,19 +10,17 @@
   </div>
 
   <div class="form-group">
-    <label for="">Upload image</label>
-    <input name="image" type="file" class="form-control">
-  </div>
-
-  <div class="form-group">
   <label for="">Enter Blog Description</label>
    <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
   </div>
   <div class="form-group">
-    <label for="">Upload blog</label>
-    <input name="blog" type="file" class="form-control">
+  <label for="image">Select Image:</label>
+    <input type="file" name="image_path" accept="image/*" class="form-control">
   </div>
-
+  <div class="form-group">
+  <label for="video">Select Video:</label>
+  <input type="file" name="video_path" accept="video/*"class="form-control">
+  </div>   
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

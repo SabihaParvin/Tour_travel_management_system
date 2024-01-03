@@ -40,7 +40,17 @@
                             <th scope="col">User ID</th>
                             <th scope="col">Package ID</th>
                             <th scope="col">Date</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Room Type</th>
+                            <th scope="col">Number of guest</th>
+                            <th scope="col">Special Request</th>
+                            <th scope="col">Amount</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Transanction ID</th>
+                            <th scope="col">Payment Status</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,7 +62,16 @@
 
                             <td>{{$booking->package_id}}</td>
                             <td>{{$booking->created_at}}</td>
+                            <td>{{$booking->name}}</td>
+                            <td>{{$booking->email}}</td>
+                            <td>{{$booking->phone}}</td>
+                            <td>{{$booking->room}}</td>
+                            <td>{{$booking->number_of_guests}}</td>
+                            <td>{{$booking->special_requests}}</td>
+                            <td>{{$booking->amount}}</td>
                             <td>{{$booking->status}}</td>
+                            <td>{{$booking->transanction_id}}</td>
+                            <td>{{$booking->payment_status}}</td>
                         </tr>
                         @endforeach
 
