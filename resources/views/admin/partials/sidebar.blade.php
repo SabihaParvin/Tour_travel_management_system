@@ -33,10 +33,7 @@
                                 <div class="sb-nav-link-icon"><i class="bi bi-list-ul"></i></div>
                                 Bookings
                             </a>
-                            <a class="nav-link" href="{{route('payment.list')}}">
-                                <div class="sb-nav-link-icon"><i class="bi bi-credit-card"></i></div>
-                                Payment
-                            </a>
+                           
                             <a class="nav-link" href="{{route('report.list')}}">
                                 <div class="sb-nav-link-icon"><i class="bi bi-flag-fill"></i></div>
                                 Report

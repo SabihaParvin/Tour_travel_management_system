@@ -84,7 +84,7 @@ class TouristController extends Controller
     ]);
 
     notify()->success('Tourist Registration successful.');
-    return redirect()->back();
+    return redirect()->route('tourist.login');
     }
 
     public function login()
@@ -96,7 +96,7 @@ class TouristController extends Controller
     {
         $val=Validator::make($request->all(),[
             'email'=>'required',
-            'password'=>'required'
+            'password'=>'required|min:6'
         ]);
         if($val->fails())
         {
@@ -112,7 +112,7 @@ class TouristController extends Controller
             notify()->success('Login Successfull.');
             return redirect()->route('frontend.home');
         }
-
+        
         notify()->error('Invalid Credentials.');
             return redirect()->back();
     }
@@ -132,7 +132,7 @@ class TouristController extends Controller
         $post_data = array();
         $post_data['total_amount'] = (int)$payment->price; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
-        $post_data['tran_id'] = uniqid(); // tran_id must be unique
+        $post_data['tran_id'] = $payment->transanction_id; // tran_id must be unique
 
         # CUSTOMER INFORMATION
         $post_data['cus_name'] =$payment->user_id ;

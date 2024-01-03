@@ -30,14 +30,23 @@ class BlogController extends Controller
             $file->storeAs('/uploads',$fileName);
 
         }
+        $blogfile=null;
+        if($request->hasFile('blog'))
+        {
+            $file=$request->file('blog');
+            $blogfile=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$blogfile);
+
+        }
                Blog::create([
                 'title'=>$request->title,
                 'image'=>$fileName,
                 'description'=>$request->description,
+                'blog'=>$fileName,
                ]);
 
         notify()->success('Blog uploaded successfully');
-        return redirect()->back();
+        return redirect()->route('blog.list');
     }
     public function contact()
     {

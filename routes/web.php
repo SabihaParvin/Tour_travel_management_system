@@ -10,7 +10,6 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\ReviewController;
 use App\Http\Controllers\Backend\PackageController;
-use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\RatingsController;
 use App\Http\Controllers\Backend\TouristController;
 use App\Http\Controllers\Backend\BookingsController;
@@ -18,6 +17,7 @@ use App\Http\Controllers\Backend\LocationController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\Frontend\ContactController as FrontendContactController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
+use App\Http\Controllers\Frontend\ReviewController as FrontendReviewController;
 use App\Http\Controllers\Frontend\TouristController as FrontendTouristController;
 use App\Http\Controllers\Frontend\BookingsController as FrontendBookingsController;
 use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePackageController;
@@ -58,6 +58,9 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
         Route::get('/profile/view',[FrontendTouristController::class,'profile'])->name('profile.view');
         Route::get('/profile/edit/{id}',[FrontendTouristController::class,'profileEdit'])->name('profile.edit');
         Route::put('/profile/update/{id}',[FrontendTouristController::class,'profileUpdate'])->name('profile.update');
+
+        Route::get('/give/review',[FrontendReviewController::class,'review'])->name('give.review');
+        Route::post('/store/review',[FrontendReviewController::class,'store'])->name('store.review');
 
         Route::get('contact/list',[FrontendContactController::class,'list'])->name('contact.list');
         Route::post('contact/store',[FrontendContactController::class,'store'])->name('contact.store');
@@ -122,6 +125,7 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
     Route::get('/package/edit/{id}',[PackageController::class,'edit'])->name('package.edit');
     Route::put('/package/update/{id}',[PackageController::class,'update'])->name('package.update');
     Route::get('/package/view/{id}',[PackageController::class,'view'])->name('package.view');
+    Route::get('/package/print/',[PackageController::class,'print'])->name('packages.print');
 
     Route::get('/spot/list', [SpotController::class, 'list'])->name('spot.list');
     Route::get('/spot/form', [SpotController::class, 'form'])->name('place.form');
@@ -132,14 +136,12 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
     Route::post('/location/store', [LocationController::class, 'store'])->name('location.store');
 
     Route::get('/bookings/list', [BookingsController::class, 'list'])->name('bookings.list');
-    Route::get('/bookings/form', [BookingsController::class, 'form'])->name('bookings.form');
-    //Route::post('/bookings/store', [BookingsController::class, 'store'])->name('bookings.store');
+    //Route::get('/bookings/form', [BookingsController::class, 'form'])->name('bookings.form');
+    Route::get('/bookings/print', [BookingsController::class, 'print'])->name('bookings.print');
     Route::get('/confirm-bookings/{id}',[BookingsController::class,'confirmBooking'])->name('confirm.booking');
     Route::get('/reject-bookings/{id}',[BookingsController::class,'rejectBooking'])->name('reject.booking');
 
-    Route::get('/payment/list', [PaymentController::class, 'list'])->name('payment.list');
-    Route::get('/payment/form', [PaymentController::class, 'form'])->name('payment.form');
-    //Route::post('/payment/store', [PaymentController::class, 'store'])->name('payment.store');
+
 
     Route::get('/report/list', [ReportController::class, 'list'])->name('report.list');
     Route::get('/report/form', [ReportController::class, 'form'])->name('report.form');

@@ -5,7 +5,7 @@
 <h1>Package List</h1>
 
 <a href="{{route('packages.form')}}" class="btn btn-success">Create New Packages</a>
-
+<a href="{{route('packages.print')}}" class="btn btn-success">Print</a>
 
 <table class="table table-light">
   <thead>

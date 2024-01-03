@@ -13,6 +13,7 @@
       <th scope="col">Title</th>
       <th scope="col">Image</th>
       <th scope="col">Description</th>
+      <th scope="col">Blog</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -25,6 +26,9 @@
          <img style="border-radius: 100px;" width="20%" src="{{url('/uploads/'.$blog->image)}}" alt="image">
       </td>
       <td>{{$blog->description}}</td>
+      <td>
+         <img style="border-radius: 100px;" width="20%" src="{{url('/uploads/'.$blog->blog)}}" alt="blog">
+      </td>
       <td>
         <a class="btn btn-success" href="">view</a>
         <a class="btn btn-warning" href="">Update</a>

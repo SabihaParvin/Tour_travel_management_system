@@ -14,7 +14,6 @@
       <th scope="col">Image</th>
       <th scope="col">Email</th>
       <th scope="col">Phone no</th>
-      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -29,11 +28,6 @@
         </td>
       <td>{{$tourist->email}}</td>
       <td>{{$tourist->contactInfo}}</td>
-      <td>
-        <a class="btn btn-warning" href="">View</a>
-        <a class="btn btn-success" href="">Edit</a>
-        <a class="btn btn-danger" href="">Delete</a>
-      </td>
 
     </tr>
 @endforeach

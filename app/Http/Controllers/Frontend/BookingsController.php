@@ -13,6 +13,8 @@ class BookingsController extends Controller
         Booking::create([
             'user_id'=>auth()->user()->id,
             'package_id'=>$packageID,
+            'transanction_id'=>date('YmdHis'),
+            'payment_status'=>'pending',
        ]);
        notify()->success('Booking successfull');
        return redirect()->back();

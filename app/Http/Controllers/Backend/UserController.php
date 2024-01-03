@@ -122,7 +122,7 @@ class UserController extends Controller
 
         }
 
-        Admin::create([
+        User::create([
             'name'=>$request->user_name,
             'role'=>$request->role,
             'image'=>$fileName,
@@ -131,7 +131,7 @@ class UserController extends Controller
             'password'=>bcrypt($request->user_password),
         ]);
 
-        return redirect()->back()->with('message','User created successfully.');
+        return redirect()->route('users.list')->with('message','User created successfully.');
 
 
     }

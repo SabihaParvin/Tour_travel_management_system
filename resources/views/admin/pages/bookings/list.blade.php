@@ -2,6 +2,9 @@
 
 @section('content')
 <h1>Booking List</h1>
+
+<a class="btn btn-primary" href="{{route('bookings.print')}}">Print</a>
+
 <table class="table table-light">
   <thead>
     <tr>

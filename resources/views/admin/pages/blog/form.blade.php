@@ -10,7 +10,7 @@
   </div>
 
   <div class="form-group">
-    <label for="">Upload File</label>
+    <label for="">Upload image</label>
     <input name="image" type="file" class="form-control">
   </div>
 
@@ -18,6 +18,11 @@
   <label for="">Enter Blog Description</label>
    <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
   </div>
+  <div class="form-group">
+    <label for="">Upload blog</label>
+    <input name="blog" type="file" class="form-control">
+  </div>
+
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

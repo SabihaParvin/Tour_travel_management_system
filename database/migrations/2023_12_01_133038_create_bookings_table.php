@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('package_id')->constrained();
             $table->string('status')->default('pending');
+            $table->string('transanction_id')->unique();
+            $table->string('payment_status')->nullable();
             $table->timestamps();
         });
     }

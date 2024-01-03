@@ -20,8 +20,7 @@
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{$package->name}}</small>
-                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i></small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i></small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>{{$package->start_date}}</small>
                             </div>
                             <a class="h5 text-decoration-none" href="{{route('single.package.view',$package->id)}}">Discover amazing places of Bangladesh with us</a>
                             <div class="border-top mt-4 pt-4">

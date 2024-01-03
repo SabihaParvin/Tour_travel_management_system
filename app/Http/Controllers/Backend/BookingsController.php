@@ -15,8 +15,9 @@ class BookingsController extends Controller
         return view('admin.pages.bookings.list',compact('bookings'));
     }
 
-    public function form(){
-        return view('admin.pages.bookings.form');
+    public function print(){
+        $bookings=Booking::all();
+        return view('admin.pages.bookings.print',compact('bookings'));
     }
 
     public function confirmBooking($BID)
