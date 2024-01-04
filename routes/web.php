@@ -43,6 +43,7 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
     Route::get('/aboutUs',[FrontendHomeController::class,'aboutUs'])->name('about.us');
     Route::get('/contactUs',[FrontendHomeController::class,'contactUs'])->name('contact.us');
 
+    Route::get('/blog',[FrontendHomeController::class,'blog'])->name('frontend.blog');
 
     Route::get('/registration',[FrontendTouristController::class,'registration'])->name('tourist.registration');
     Route::post('/reg-form-store',[FrontendTouristController::class,'store'])->name('tourist.regform.store');

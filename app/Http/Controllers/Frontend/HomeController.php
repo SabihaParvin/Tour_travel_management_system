@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Blog;
 use App\Models\Package;
 use App\Models\Location;
 use Illuminate\Http\Request;
@@ -42,7 +43,10 @@ class HomeController extends Controller
   {
     return view('frontend.pages.contactUs');  
   }
- 
-
+  public function blog()
+  {
+    $blogs=Blog::all();
+    return view('frontend.pages.blog',compact('blogs'));  
+  }
  
 }

@@ -26,8 +26,9 @@ class TouristController extends Controller
         // dd($bookings->toarray());
         $users=User::all();
         // dd($users);
-        
-        return view('frontend.pages.profile.viewprofile',compact('bookings','users'));
+        $booking=Booking::where('status','Approved')->count();
+        $Booking=Booking::where('status','pending')->count();
+        return view('frontend.pages.profile.viewprofile',compact('bookings','users','booking','Booking'));
     }
     
     public function profileEdit($userId)

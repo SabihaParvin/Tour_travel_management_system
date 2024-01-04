@@ -23,18 +23,18 @@
     <th scope="row">{{$key+1}}</th>
       <td>{{$blog->title}}</td>
       <td>
-         <img style="border-radius: 100px;" width="20%" src="{{url('/'.$blog->image_path)}}" alt="image">
+         <img style="border-radius: 100px;" width="20%" src="{{url('/uploads/'.$blog->image_path)}}" alt="image_path">
       </td>
       <td>{{$blog->description}}</td>
       <td>
-         <img style="border-radius: 100px;" width="20%" src="{{url('/'.$blog->video_path)}}" alt="video">
+         <video style="border-radius: 80px;" width="20%" src="{{url('/uploads/'.$blog->video_path)}}" alt="video_path">
       </td>
       <td>
         <a class="btn btn-success" href="">view</a>
         <a class="btn btn-warning" href="">Update</a>
         <a class="btn btn-danger" href="">Delete</a>
       </td>
-
+     
     </tr>
  @endforeach
   </tbody>

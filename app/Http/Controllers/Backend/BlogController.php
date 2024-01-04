@@ -23,7 +23,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
-        {
+        /*{
             
             $request->validate([
                 'image_path' => 'sometimes|required|mimes:jpeg,png,gif|max:10240', // Adjust max size as needed
@@ -33,7 +33,7 @@ class BlogController extends Controller
             ]);
 
 
-        }
+        }*/
         $imageFileName = null;
         
         if ($request->hasFile('image_path')) {
@@ -47,7 +47,7 @@ class BlogController extends Controller
             $videoFileName = date('Ymdhis') . '.' . $file->getClientOriginalExtension();
             $file->storeAs('/uploads', $videoFileName);
         }
-        dd($request->image_path);
+       // dd($request->image_path);
                Blog::create([
                 'title'=>$request->title,
                 'description'=>$request->description,

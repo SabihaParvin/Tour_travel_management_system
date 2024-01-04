@@ -48,9 +48,9 @@
                 <div class="navbar-nav ml-auto py-0">
                     <a href="{{route('frontend.home')}}" class="nav-item nav-link active">Home</a>
                     <a href="{{route('about.us')}}" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
                     <a href="{{route('Frontend.PackageView')}}" class="nav-item nav-link">Packages</a>
                     <a href="{{route('frontend.location')}}" class="nav-item nav-link">Location</a>
+                    <a href="{{route('frontend.blog')}}" class="nav-item nav-link">Blog</a>
                     <a href="{{route('contact.us')}}" class="nav-item nav-link">Contact</a>
 
 
