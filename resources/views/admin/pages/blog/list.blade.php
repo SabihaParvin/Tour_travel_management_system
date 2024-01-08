@@ -30,9 +30,8 @@
          <video style="border-radius: 80px;" width="20%" src="{{url('/uploads/'.$blog->video_path)}}" alt="video_path">
       </td>
       <td>
-        <a class="btn btn-success" href="">view</a>
         <a class="btn btn-warning" href="">Update</a>
-        <a class="btn btn-danger" href="">Delete</a>
+        <a class="btn btn-danger" href="{{route('blog.delete',$blog->id)}}">Delete</a>
       </td>
      
     </tr>

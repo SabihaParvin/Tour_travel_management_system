@@ -29,7 +29,7 @@
     <div class="container">
 
         <div class="row mt-3">
-            <h2 class="mb-1 text-center">Booking Details</h2>
+            <h2 class="mb-1 text-center">Report</h2>
             <!-- <div class="col-1"></div> -->
             <div class="col">
                 <button id="print" class="btn btn-success mb-3" onclick="printlist()">Print List</button>
@@ -50,7 +50,7 @@
                             <th scope="col">Status</th>
                             <th scope="col">Transanction ID</th>
                             <th scope="col">Payment Status</th>
-                            <th scope="col">Action</th>
+                            
                         </tr>
                     </thead>
                     <tbody>

@@ -7,15 +7,16 @@ use App\Models\Package;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Review;
 
 class HomeController extends Controller
 {
   public function home()
 
   {
-    $locations=Location::all();
-
-    return view('frontend.pages.home', compact('locations'));
+    $reviews=Review::all();
+    
+    return view('frontend.pages.home', compact('reviews'));
   }  
   public function searchpackage(Request $request)
   {
@@ -48,5 +49,6 @@ class HomeController extends Controller
     $blogs=Blog::all();
     return view('frontend.pages.blog',compact('blogs'));  
   }
+
  
 }

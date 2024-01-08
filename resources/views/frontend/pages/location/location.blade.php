@@ -13,7 +13,7 @@
                     <img class="img-fluid" src="{{url('/uploads/'.$location->image)}}" alt="">
                     <a class="destination-overlay text-white text-decoration-none" href="">
                         <h5 class="text-white">{{$location->name}}</h5>
-                        <span>100 Cities</span>
+                        <span></span>
                     </a>
                 </div>
             </div>

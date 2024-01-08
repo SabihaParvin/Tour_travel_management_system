@@ -60,7 +60,7 @@
                     @endguest
 
                     @auth
-                    <a class="nav-item nav-link" class="btn btn-primary" href="{{route('tourist.logout')}}">Logout</a> |
+                    <a class="nav-item nav-link" class="btn btn-primary" href="{{route('tourist.logout')}}">Logout</a> 
                     <a class="nav-item nav-link" class="btn btn-primary" href="{{route('profile.view')}}">Profile|{{auth()->user()->name}} ({{ auth()->user()->role }})</a>
                     @endauth
 

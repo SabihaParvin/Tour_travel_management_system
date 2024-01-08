@@ -26,8 +26,9 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         if(Schema::hasTable('reviews'))
         {
-            $reviewRatings=Review::all();
-            View::share('reviewRatings', $reviewRatings );
+            $reviews=Review::all();
+            View::share('reviews', $reviews );
+            //dd($reviews);
         }
     }
 }

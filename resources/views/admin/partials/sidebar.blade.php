@@ -34,18 +34,12 @@
                                 Bookings
                             </a>
                            
-                            <a class="nav-link" href="{{route('report.list')}}">
-                                <div class="sb-nav-link-icon"><i class="bi bi-flag-fill"></i></div>
-                                Report
-                            </a>
+                           
                             <a class="nav-link" href="{{route('review.list')}}">
                                 <div class="sb-nav-link-icon"><i class="bi bi-envelope"></i></div>
                                 Review
                             </a>
-                            <a class="nav-link" href="{{route('ratings.list')}}">
-                                <div class="sb-nav-link-icon"><i class="bi bi-star"></i></div>
-                                Ratings
-                            </a>
+                            
                             <a class="nav-link" href="{{route('blog.list')}}">
                                 <div class="sb-nav-link-icon"><i class="bi bi-images"></i></div>
                                 Blog

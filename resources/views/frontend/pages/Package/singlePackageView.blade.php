@@ -23,7 +23,7 @@
                     <i class="fa fa-angle-right"></i>End Date: {{$singlePackage->end_date}}
                 </span>
             </p>
-        </div><!--/.packages-para-->
+        </div><!--/.packages-para
         <div class="packages-review">
             <p>
                 <i class="fa fa-star"></i>
@@ -31,10 +31,10 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
-                <span>254 reviews</span>
+                <span></span>
             </p>
 
-        </div><!--/.packages-review-->
+        </div>/.packages-review-->
         <div class="about-btn">
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bookingModal">
@@ -84,15 +84,24 @@
                                     <label for="number_of_guests">Number of Guests:</label>
                                     <input type="number" class="form-control" name="number_of_guests" id="number_of_guests" min="1" required>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="special_requests">Special Requests:</label>
-                                    <textarea class="form-control" name="special_requests" rows="4"></textarea>
-                                </div>
                                 <div class="form-group">
                                     <label for="amount">Total amount:</label>
                                     <input value="{{ $singlePackage->price }}.BDT" type="text" class="form-control" name="amount" id="total_amount" readonly required>
                                 </div>
+                                <div class="form-group">
+                                    <label for="">Select pickup point</label>
+                                    <select required class="form-control" name="pickup_point" id="">
+                                        <option value="Chowrasta">Chowrasta</option>
+                                        <option value="Abdullahpur">Abdullahpur</option>
+                                        <option value="Saydabaad">Saydabaad</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="special_requests">Special Requests:</label>
+                                    <textarea class="form-control" name="special_requests" rows="4"></textarea>
+                                </div>
+                        
+                               
                                 <button type="submit" class="btn btn-success"> Book Now</button>
                             </form>
 

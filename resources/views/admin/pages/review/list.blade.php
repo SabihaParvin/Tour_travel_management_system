@@ -8,22 +8,21 @@
     <tr>
       <th scope="col">Sl no</th>
       <th scope="col">User Id</th>
-      <th scope="col">package id</th>
-      <th scope="col">Content</th>
+      <th scope="col">Testimonial</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+    @foreach($reviews as $key=>$review)
     <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  <td>
-        <a class="btn btn-warning" href="">Update</a>
-        <a class="btn btn-danger" href="">Delete</a>
+      <th scope="row">{{$key+1}}</th>
+      <td>{{$review->user_id}}</td>
+      <td>{{$review->review}}</td>
+      <td>
+        <a class="btn btn-danger" href="{{route('review.delete',$review->id)}}">Delete</a>
       </td>
-</tr>
+    </tr>
+    @endforeach
   </tbody>
 </table>
 

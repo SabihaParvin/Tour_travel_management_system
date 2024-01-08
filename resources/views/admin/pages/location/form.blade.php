@@ -11,7 +11,7 @@
 
   <div class="form-group">
   <label for="">Enter Location Description:</label>
-   <textarea class="form-control" name="description" id="location_description" cols="30" rows="10"></textarea>
+   <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
   </div>
 
   <div class="form-group">

@@ -17,6 +17,7 @@
       <th scope="col">Phone</th>
       <th scope="col">Room Type</th>
       <th scope="col">Number of guest</th>
+      <th scope="col">Pickup Point</th>
       <th scope="col">Special Request</th>
       <th scope="col">Amount</th>
       <th scope="col">Status</th>
@@ -39,6 +40,7 @@
   <td>{{$booking->phone}}</td>
   <td>{{$booking->room}}</td>
   <td>{{$booking->number_of_guests}}</td>
+  <td>{{$booking->pickup_point}}</td>
   <td>{{$booking->special_requests}}</td>
   <td>{{$booking->amount}}</td>
   <td>{{$booking->status}}</td>

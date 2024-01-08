@@ -19,12 +19,13 @@ class BookingsController extends Controller
             'phone'=>$request->phone,
             'room'=>$request->room,
             'number_of_guests'=>$request->number_of_guests,
-            'special_requests'=>$request->special_requests,
             'amount'=>$request->amount,
+            'special_requests'=>$request->special_requests,
+            'pickup_point'=>$request->pickup_point,
             'transanction_id'=>date('YmdHis'),
             'payment_status'=>'pending',
        ]);
-       notify()->success('Booking successfull');
+       notify()->success('Wait for admin approval');
        return redirect()->route('frontend.home');
     }
 

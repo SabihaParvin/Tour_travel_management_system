@@ -25,8 +25,8 @@
                             <a class="h5 text-decoration-none" href="{{route('single.package.view',$package->id)}}">Discover amazing places of Bangladesh with us</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                    <h5 class="m-0">{{$package->price}}.BDT</h5>
+                                    <h6 class="m-0"><small></small></h6>
+                                    <h5 class="m-0">Price-{{$package->price}}.BDT</h5>
                                 </div>
                             </div>
                         </div>

@@ -14,7 +14,16 @@ class BlogController extends Controller
         $blogs=Blog::all();
         return view('admin.pages.blog.list',compact('blogs'));
     } 
-
+    public function delete($id)
+    {
+        $blog = Blog::find($id);
+        //dd($package);
+        if ($blog) {
+            $blog->delete();
+        }
+        notify()->success('Blog Deleted Successfully');
+        return redirect()->back();
+    }
     public function form()
     {
         return view('admin.pages.blog.form');

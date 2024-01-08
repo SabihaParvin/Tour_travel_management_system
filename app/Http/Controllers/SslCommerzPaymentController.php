@@ -171,8 +171,8 @@ class SslCommerzPaymentController extends Controller
 
         #Check order status in order tabel against the transaction id or order id.
         $order_details = Booking::where('transanction_id', $tran_id)->first();
-
-        if ($order_details->status == 'pending') {
+//dd($order_details);
+        if ($order_details->payment_status == 'pending') {
             $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
 
             if ($validation) {
@@ -185,7 +185,7 @@ class SslCommerzPaymentController extends Controller
                'payment_status'=>'confirm',
                //'status'=>'confirm'
                ]);
-               notify()->success('payment successfull');
+               notify()->success('payment successful');
                 return redirect()->route('profile.view');
             }
         } else if ($order_details->status == 'Processing' || $order_details->status == 'Confirm') {

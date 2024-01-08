@@ -4,7 +4,7 @@
 
 
 <h1>Create new User</h1>
-
+<div class="container bg-light col-md-5 pd-4 py-3 card shadow">
 <form action="{{route('users.store')}}" method="post" enctype="multipart/form-data">
 
   @if(session()->has('myError'))

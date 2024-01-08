@@ -16,7 +16,7 @@ class HomeController extends Controller
        
         $users=User::count();
         $tourists=User::where('role','tourist')->count();
-        $bookings=Booking::where('status','approved')->count();
+        $bookings=Booking::where('payment_status','confirm')->count();
         
         return view('admin.pages.home',compact('tourists','bookings','users'));
     }

@@ -152,8 +152,7 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
 
     Route::get('/review/list', [ReviewController::class, 'list'])->name('review.list');
     Route::get('/review/form', [ReviewController::class, 'form'])->name('review.form');
-    //Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store');
-
+    Route::get('/review/delete/{id}',[ReviewController::class,'delete'])->name('review.delete');
     Route::get('/ratings/list', [RatingsController::class, 'list'])->name('ratings.list');
     Route::get('/ratings/form', [RatingsController::class, 'form'])->name('ratings.form');
     //Route::post('/ratings/store', [RatingsController::class, 'store'])->name('ratings.store');
@@ -161,7 +160,8 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
     Route::get('/blog/list', [BlogController::class, 'list'])->name('blog.list');
     Route::get('/blog/form', [BlogController::class, 'form'])->name('blog.form');
     Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
-
+    Route::get('/blog/delete/{id}', [BlogController::class, 'delete'])->name('blog.delete');
+    
     Route::get('/contact/list', [BlogController::class, 'contact'])->name('contact.list');
     
     });

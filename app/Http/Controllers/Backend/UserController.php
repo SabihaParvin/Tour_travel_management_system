@@ -94,7 +94,8 @@ class UserController extends Controller
 
     public function list(){
         $users=User::all();
-        return view('admin.pages.users.list',compact('users'));
+        $admin=Admin::all();
+        return view('admin.pages.users.list',compact('users','admin'));
     }
     public function form(){
         return view('admin.pages.users.form');
