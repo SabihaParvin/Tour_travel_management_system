@@ -33,11 +33,8 @@ class TouristController extends Controller
     
     public function profileEdit($userId)
     {
-      
         $users=User::find($userId);
-    
         return view('frontend.pages.profile.profileEdit',compact('users'));
-    
     }
 
     public function profileUpdate(Request $request, $userId)
@@ -53,7 +50,6 @@ class TouristController extends Controller
             {
               $file=$request->file('image');
               $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
-
               $file->storeAs('/uploads',$fileName);
 
             }

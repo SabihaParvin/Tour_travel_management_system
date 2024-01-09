@@ -11,7 +11,8 @@ class BookingsController extends Controller
 {
     public function list()
     {
-        $bookings=Booking::all();
+        $bookings=Booking::with('user')->get();
+        $bookings=Booking::with('package')->get();
         return view('admin.pages.bookings.list',compact('bookings'));
     }
 

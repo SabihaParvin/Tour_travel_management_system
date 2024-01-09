@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Blog;
+use App\Models\Vlog;
+use App\Models\Review;
 use App\Models\Package;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Review;
 
 class HomeController extends Controller
 {
@@ -44,10 +44,10 @@ class HomeController extends Controller
   {
     return view('frontend.pages.contactUs');  
   }
-  public function blog()
+  public function vlog()
   {
-    $blogs=Blog::all();
-    return view('frontend.pages.blog',compact('blogs'));  
+    $vlogs=Vlog::all();
+    return view('frontend.pages.vlog',compact('vlogs'));  
   }
 
  

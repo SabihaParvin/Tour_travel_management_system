@@ -40,9 +40,9 @@
                                 Review
                             </a>
                             
-                            <a class="nav-link" href="{{route('blog.list')}}">
+                            <a class="nav-link" href="{{route('vlog.list')}}">
                                 <div class="sb-nav-link-icon"><i class="bi bi-images"></i></div>
-                                Blog
+                                Vlog
                             </a>
                             <a class="nav-link" href="{{route('contact.list')}}">
                                 <div class="sb-nav-link-icon"><i class="bi bi-envelope"></i></div>

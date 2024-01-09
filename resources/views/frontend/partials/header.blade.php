@@ -50,7 +50,7 @@
                     <a href="{{route('about.us')}}" class="nav-item nav-link">About</a>
                     <a href="{{route('Frontend.PackageView')}}" class="nav-item nav-link">Packages</a>
                     <a href="{{route('frontend.location')}}" class="nav-item nav-link">Location</a>
-                    <a href="{{route('frontend.blog')}}" class="nav-item nav-link">Blog</a>
+                    <a href="{{route('frontend.vlog')}}" class="nav-item nav-link">Vlog</a>
                     <a href="{{route('contact.us')}}" class="nav-item nav-link">Contact</a>
 
 

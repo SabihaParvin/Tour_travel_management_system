@@ -93,8 +93,8 @@
             <th scope="col">Status</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
-            <th scope="col">Phone no</th>
-            <th scope="col">Room type</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Room </th>
             <th scope="col">Number of guest</th>
             <th scope="col">pickup Point </th>
             <th scope="col">Special Request</th>
@@ -111,7 +111,7 @@
         <tr>
             <th scope="row">{{$booking->id}}</th>
             <td>{{$booking->created_at}}</td>
-            <td>{{$booking->package_id}}</td>
+            <td>{{$booking->package->name}}</td>
             <td>{{$booking->status}}</td>
             <td>{{$booking->name}}</td>
             <td>{{$booking->email}}</td>
@@ -121,9 +121,11 @@
             <td>{{$booking->pickup_point}}</td>
             <td>{{$booking->special_requests}}</td>
             <td>{{$booking->amount}}</td>
+            @if($booking->payment_status == 'confirm')
             <td>{{$booking->transanction_id}}</td>
+            @endif
+           
             <td>{{$booking->payment_status}}</td>
-
             <td>
 
                 @if($booking->status=='pending')

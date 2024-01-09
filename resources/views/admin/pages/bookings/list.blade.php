@@ -9,10 +9,9 @@
   <thead>
     <tr>
       <th scope="col">Sl no</th>
-      <th scope="col">User ID</th>
-      <th scope="col">Package ID</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Package Name</th>
       <th scope="col">Date</th>
-      <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">Room Type</th>
@@ -31,11 +30,10 @@
 
 <tr>
 <th scope="row">{{$key+1}}</th>
-  <td>{{$booking->user_id}}</td>
+  <td>{{$booking->user->name}}</td>
   
-  <td>{{$booking->package_id}}</td>
+  <td>{{$booking->package->name}}</td>
   <td>{{$booking->created_at}}</td>
-  <td>{{$booking->name}}</td>
   <td>{{$booking->email}}</td>
   <td>{{$booking->phone}}</td>
   <td>{{$booking->room}}</td>

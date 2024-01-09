@@ -2,8 +2,7 @@
 
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\BlogController;
-
+use App\Http\Controllers\Backend\VlogController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\SpotController;
 use App\Http\Controllers\Backend\UserController;
@@ -15,6 +14,7 @@ use App\Http\Controllers\Backend\TouristController;
 use App\Http\Controllers\Backend\BookingsController;
 use App\Http\Controllers\Backend\LocationController;
 use App\Http\Controllers\SslCommerzPaymentController;
+
 use App\Http\Controllers\Frontend\ContactController as FrontendContactController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\Frontend\ReviewController as FrontendReviewController;
@@ -43,7 +43,7 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
     Route::get('/aboutUs',[FrontendHomeController::class,'aboutUs'])->name('about.us');
     Route::get('/contactUs',[FrontendHomeController::class,'contactUs'])->name('contact.us');
 
-    Route::get('/blog',[FrontendHomeController::class,'blog'])->name('frontend.blog');
+    Route::get('/vlog',[FrontendHomeController::class,'vlog'])->name('frontend.vlog');
 
     Route::get('/registration',[FrontendTouristController::class,'registration'])->name('tourist.registration');
     Route::post('/reg-form-store',[FrontendTouristController::class,'store'])->name('tourist.regform.store');
@@ -157,12 +157,12 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
     Route::get('/ratings/form', [RatingsController::class, 'form'])->name('ratings.form');
     //Route::post('/ratings/store', [RatingsController::class, 'store'])->name('ratings.store');
 
-    Route::get('/blog/list', [BlogController::class, 'list'])->name('blog.list');
-    Route::get('/blog/form', [BlogController::class, 'form'])->name('blog.form');
-    Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store');
-    Route::get('/blog/delete/{id}', [BlogController::class, 'delete'])->name('blog.delete');
+    Route::get('/vlog/list', [VlogController::class, 'list'])->name('vlog.list');
+    Route::get('/vlog/form', [VlogController::class, 'form'])->name('vlog.form');
+    Route::post('/vlog/store', [VlogController::class, 'store'])->name('vlog.store');
+    Route::get('/vlog/delete/{id}', [VlogController::class, 'delete'])->name('vlog.delete');
     
-    Route::get('/contact/list', [BlogController::class, 'contact'])->name('contact.list');
+    Route::get('/contact/list', [VlogController::class, 'contact'])->name('contact.list');
     
     });
    });

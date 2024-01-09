@@ -11,7 +11,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total User</div>
+                                                Total Users</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{$users}}</div>
                                         </div>
                                         <div class="col-auto">
@@ -28,8 +28,8 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Tourist</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$tourists}}</div>
+                                                Total Packages</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$packages}}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
