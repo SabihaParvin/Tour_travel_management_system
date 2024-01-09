@@ -11,7 +11,7 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="destination-item position-relative overflow-hidden mb-2">
                     <img class="img-fluid" src="{{url('/uploads/'.$location->image)}}" alt="">
-                    <a class="destination-overlay text-white text-decoration-none" href="">
+                    <a class="destination-overlay text-white text-decoration-none" href="{{route('frontend.details')}}">
                         <h5 class="text-white">{{$location->name}}</h5>
                         <span></span>
                     </a>

@@ -182,7 +182,7 @@ class TouristController extends Controller
     public function logout()
     {
         auth()->logout();
-        notify()->success('Logout Successfull');    
+        notify()->success('Logout Successful');    
         return redirect()->route('frontend.home');
     }
 

@@ -20,10 +20,6 @@
                                 <div class="sb-nav-link-icon"><i class="bi bi-box"></i></div>
                                 Packages
                             </a>
-                            <a class="nav-link" href="{{route('spot.list')}}">
-                                <div class="sb-nav-link-icon"><i class="bi bi-shop-window"></i></div>
-                                Spot
-                            </a>
                         
                             <a class="nav-link" href="{{route('location.list')}}">
                                 <div class="sb-nav-link-icon"><i class="bi bi-geo-alt"></i></div>

@@ -6,6 +6,7 @@
 <form action="{{route('user.update',$users->id)}}" method="post" enctype="multipart/form-data">
  @csrf
  @method('put')
+ <div class="container bg-light col-md-5 pd-4 py-3 card shadow">
 <div class="form-group">
   <label for="">Enter User Name:</label>
   <input value="{{$users->name}}" type="text" class="form-control" id="" placeholder="Enter name" name="user_name">
@@ -33,5 +34,6 @@
 
 
 <button type="submit" class="btn btn-primary">Submit</button>
+</div>
 </form>
 @endsection

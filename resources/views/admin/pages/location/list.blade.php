@@ -30,9 +30,8 @@
 
  
   <td>
-    <a class="btn btn-success" href="">view</a>
-    <a class="btn btn-warning" href="">Update</a>
-    <a class="btn btn-danger" href="">Delete</a>
+    <a class="btn btn-warning" href="{{route('location.edit',$location->id)}}">Update</a>
+    <a class="btn btn-danger" href="{{route('location.delete',$location->id)}}">Delete</a>
   </td>
 
 </tr>

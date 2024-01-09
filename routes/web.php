@@ -4,12 +4,10 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\VlogController;
 use App\Http\Controllers\Backend\HomeController;
-use App\Http\Controllers\Backend\SpotController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\ReviewController;
 use App\Http\Controllers\Backend\PackageController;
-use App\Http\Controllers\Backend\RatingsController;
 use App\Http\Controllers\Backend\TouristController;
 use App\Http\Controllers\Backend\BookingsController;
 use App\Http\Controllers\Backend\LocationController;
@@ -17,6 +15,7 @@ use App\Http\Controllers\SslCommerzPaymentController;
 
 use App\Http\Controllers\Frontend\ContactController as FrontendContactController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHomeController;
+use App\Http\Controllers\Frontend\LocationController as FrontendLocationController;
 use App\Http\Controllers\Frontend\ReviewController as FrontendReviewController;
 use App\Http\Controllers\Frontend\TouristController as FrontendTouristController;
 use App\Http\Controllers\Frontend\BookingsController as FrontendBookingsController;
@@ -38,12 +37,13 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
     Route::get('/',[FrontendHomecontroller::class,'home'])->name('frontend.home');
 
     Route::get('/search/packages',[FrontendHomeController::class,'searchPackage'])->name('search.package');
-
-    Route::get('/location/list',[FrontendHomeController::class,'location'])->name('frontend.location');
     Route::get('/aboutUs',[FrontendHomeController::class,'aboutUs'])->name('about.us');
     Route::get('/contactUs',[FrontendHomeController::class,'contactUs'])->name('contact.us');
 
     Route::get('/vlog',[FrontendHomeController::class,'vlog'])->name('frontend.vlog');
+
+    Route::get('/location/list',[FrontendLocationController::class,'location'])->name('frontend.location');
+    Route::get('/location/details',[FrontendLocationController::class,'details'])->name('frontend.details');
 
     Route::get('/registration',[FrontendTouristController::class,'registration'])->name('tourist.registration');
     Route::post('/reg-form-store',[FrontendTouristController::class,'store'])->name('tourist.regform.store');
@@ -130,13 +130,13 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
     Route::get('/package/view/{id}',[PackageController::class,'view'])->name('package.view');
     Route::get('/package/print/',[PackageController::class,'print'])->name('packages.print');
 
-    Route::get('/spot/list', [SpotController::class, 'list'])->name('spot.list');
-    Route::get('/spot/form', [SpotController::class, 'form'])->name('place.form');
-    //Route::post('/spot/store', [SpotController::class, 'store'])->name('spot.store');
 
     Route::get('/location/list', [LocationController::class, 'list'])->name('location.list');
     Route::get('/location/form', [LocationController::class, 'form'])->name('location.form');
     Route::post('/location/store', [LocationController::class, 'store'])->name('location.store');
+    Route::get('/location/delete/{id}', [LocationController::class, 'delete'])->name('location.delete');
+    Route::get('/location/edit/{id}',[LocationController::class,'edit'])->name('location.edit');
+    Route::put('/location/update/{id}',[LocationController::class,'update'])->name('location.update');
 
     Route::get('/bookings/list', [BookingsController::class, 'list'])->name('bookings.list');
     //Route::get('/bookings/form', [BookingsController::class, 'form'])->name('bookings.form');
@@ -153,16 +153,17 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
     Route::get('/review/list', [ReviewController::class, 'list'])->name('review.list');
     Route::get('/review/form', [ReviewController::class, 'form'])->name('review.form');
     Route::get('/review/delete/{id}',[ReviewController::class,'delete'])->name('review.delete');
-    Route::get('/ratings/list', [RatingsController::class, 'list'])->name('ratings.list');
-    Route::get('/ratings/form', [RatingsController::class, 'form'])->name('ratings.form');
-    //Route::post('/ratings/store', [RatingsController::class, 'store'])->name('ratings.store');
+
 
     Route::get('/vlog/list', [VlogController::class, 'list'])->name('vlog.list');
     Route::get('/vlog/form', [VlogController::class, 'form'])->name('vlog.form');
     Route::post('/vlog/store', [VlogController::class, 'store'])->name('vlog.store');
     Route::get('/vlog/delete/{id}', [VlogController::class, 'delete'])->name('vlog.delete');
+    Route::get('/vlog/edit/{id}',[VlogController::class,'edit'])->name('vlog.edit');
+    Route::put('/vlog/update/{id}',[VlogController::class,'update'])->name('vlog.update');
     
     Route::get('/contact/list', [VlogController::class, 'contact'])->name('contact.list');
+    Route::get('/contact/delete/{id}', [VlogController::class, 'contactDelete'])->name('contact.delete');
     
     });
    });

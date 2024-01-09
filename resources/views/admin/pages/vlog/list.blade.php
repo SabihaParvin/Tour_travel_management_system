@@ -23,14 +23,14 @@
     <th scope="row">{{$key+1}}</th>
       <td>{{$vlog->title}}</td>
       <td>
-         <img style="border-radius: 100px;" width="20%" src="{{url('/uploads/'.$vlog->image_path)}}" alt="image_path">
+         <img style="border-radius: 300px;" width="20%" src="{{url('/uploads/'.$vlog->image_path)}}" alt="image_path">
       </td>
       <td>{{$vlog->description}}</td>
       <td>
          <video style="border-radius: 80px;" width="20%" src="{{url('/uploads/'.$vlog->video_path)}}" alt="video_path">
       </td>
       <td>
-        <a class="btn btn-warning" href="">Update</a>
+        <a class="btn btn-warning" href="{{route('vlog.edit',$vlog->id)}}">Update</a>
         <a class="btn btn-danger" href="{{route('vlog.delete',$vlog->id)}}">Delete</a>
       </td>
      

@@ -19,6 +19,47 @@ class LocationController extends Controller
         return view('admin.pages.location.form');
     }
     
+    public function delete($Id)
+    {
+        $locations=Location::find($Id);
+     
+       if($locations)
+       {
+        $locations->delete();
+       }
+    notify()->success("location deleted");
+     return redirect()->back();
+    }
+    public function edit($Id)
+    {
+        {
+            $locations=Location::find($Id);
+            return view('admin.pages.location.edit',compact('locations'));    
+        }
+    }
+
+    Public function update(Request $request,$Id)
+    {
+         $locations=Location::find($Id);
+        
+        $fileName=$locations->image;
+        if($request->hasFile('image'))
+        {
+            $file=$request->file('image');
+            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$fileName);
+
+        }
+        $locations->Update([
+            'name'=>$request->name,
+            'description'=>$request->description,
+            'image'=>$fileName,
+            
+        ]); 
+        notify()->success('location updated successfully.');
+        return redirect()->route('location.list');
+}
+
     public function store(Request $request)
     {
         //dd($request->all());
