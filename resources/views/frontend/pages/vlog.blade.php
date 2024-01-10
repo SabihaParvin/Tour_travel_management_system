@@ -4,6 +4,7 @@
 
 @section('content')
 <div class="container-fluid py-5">
+
     <div class="container pt-5 pb-3">
         <div class="text-center mb-3 pb-3">
             <h5 class="text-primary text-uppercase" style="letter-spacing: 5px;">Our Vlog</h5>
@@ -32,7 +33,8 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal">
                         See vlog
                         </button>
-            @endforeach
+           
+                    
                         <!-- Video Modal -->
                         <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
@@ -58,6 +60,11 @@
                     </div>
                 </div>
             </div>
+            @endforeach
+            </div>
+         </div>
+        
+     </div>
            
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
