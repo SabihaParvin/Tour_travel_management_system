@@ -4,7 +4,6 @@
 
 @section('content')
 <div class="container-fluid py-5">
-
     <div class="container pt-5 pb-3">
         <div class="text-center mb-3 pb-3">
             <h5 class="text-primary text-uppercase" style="letter-spacing: 5px;">Our Vlog</h5>
@@ -23,24 +22,23 @@
                     </div>
                     <div class="bg-white p-4">
                         <div class="d-flex mb-2">
-                            <p class="text-primary text-uppercase text-decoration-none" >Admin</p>
+                            <p class="text-primary text-uppercase text-decoration-none">Admin</p>
                             <span class="text-primary px-2">|</span>
-                            <p class="text-primary text-uppercase text-decoration-none" href="">{{$vlog->title}}</p>
+                            <p class="text-primary text-uppercase text-decoration-none">{{$vlog->title}}</p>
                         </div>
                         <div>
-                        <p class="text-primary text-uppercase text-decoration-none" href="">{{$vlog->description}}</p>  
+                            <p class="text-primary text-uppercase text-decoration-none">{{$vlog->description}}</p>
                         </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal">
-                        See vlog
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#videoModal" data-video="{{ url('/uploads/' . $vlog->video_path) }}" data-title="{{ $vlog->title }}">
+                            See vlog
                         </button>
-           
-                    
+
                         <!-- Video Modal -->
                         <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="videoModalLabel">{{$vlog->title}}</h5>
+                                        <h5 class="modal-title" id="videoModalLabel">Video Title</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -48,7 +46,7 @@
                                     <div class="modal-body">
                                         <!-- Embed the video using an iframe -->
                                         <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src="{{url('/uploads/'.$vlog->video_path)}}" allowfullscreen></iframe>
+                                            <iframe id="videoIframe" class="embed-responsive-item" src="" allowfullscreen></iframe>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -57,20 +55,37 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- End of Video Modal -->
                     </div>
                 </div>
             </div>
-            @endforeach
-            </div>
-         </div>
-        
-     </div>
-           
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        @endforeach
+        </div>
+    </div>
+</div>
 
-            <!-- Popper.js -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
-            <!-- Bootstrap JS -->
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-            @endsection
+<!-- Popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    $('#videoModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var videoSrc = button.data('video');
+        var videoTitle = button.data('title');
+        var modal = $(this);
+        modal.find('.modal-title').text(videoTitle);
+        modal.find('#videoIframe').attr('src', videoSrc);
+    });
+
+    $('#videoModal').on('hidden.bs.modal', function () {
+        var modal = $(this);
+        modal.find('#videoIframe').attr('src', '');
+    });
+</script>
+@endsection

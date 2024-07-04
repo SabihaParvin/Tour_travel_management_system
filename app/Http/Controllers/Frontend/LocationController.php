@@ -10,12 +10,13 @@ class LocationController extends Controller
 {
     public function location()
     {
-       $locations=Location::all();
-      return view('frontend.pages.location.location', compact('locations'));  
+        $locations = Location::all();
+        return view('frontend.pages.location.location', compact('locations'));  
     }
-    public function details()
+
+    public function details($LID)
     {
-       $locations=Location::all();
-      return view('frontend.pages.location.details', compact('locations'));  
+        $location = Location::findOrFail($LID);
+        return view('frontend.pages.location.details', compact('location'));  
     }
 }

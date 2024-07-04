@@ -163,7 +163,7 @@ class TouristController extends Controller
         $post_data['value_b'] = "ref002";
         $post_data['value_c'] = "ref003";
         $post_data['value_d'] = "ref004";
-        //dd($post_data);
+       // dd($post_data);
         #Before  going to initiate the payment order status need to insert or update as Pending.
        
 
@@ -177,6 +177,12 @@ class TouristController extends Controller
         }
 
     }
+
+    public function reciept($id)
+{
+    $booking = Booking::findOrFail($id);
+    return view('frontend.pages.receiptsPrint', compact('booking'));
+}
     
 
     public function logout()

@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Backend;
 use App\Models\User;
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
@@ -47,6 +48,7 @@ class UserController extends Controller
     public function delete($userId)
     {
         $users=User::find($userId);
+        DB::table('bookings')->where('user_id',$users->id->delete());
        // dd($userId);
        if($users)
        {

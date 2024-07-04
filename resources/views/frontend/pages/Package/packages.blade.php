@@ -23,7 +23,7 @@
                                     <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{ $package->name }}</small>
                                     <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>{{ $package->start_date }}</small>
                                 </div>
-                                <a class="h5 text-decoration-none" href="{{ route('single.package.view', $package->id) }}">Discover amazing places of Bangladesh with us</a>
+                                <a class="h5 text-decoration-none" href="{{ route('single.package.view', $package->id) }}"> Book now for discovering amazing places of Bangladesh with us</a>
                                 
                                 @if(now() < $package->start_date)
                                     {{-- Display booking option when the start date has not passed --}}
@@ -31,7 +31,7 @@
                                         <div class="d-flex justify-content-between">
                                             <h6 class="m-0"><small></small></h6>
                                             <h5 class="m-0">Price-{{ $package->price }}.BDT</h5>
-                                            <button class="btn btn-primary" disabled>Book Now</button>
+                                        
                                         </div>
                                     </div>
                                 @else

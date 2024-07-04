@@ -18,8 +18,7 @@
                             </div>
                             <div class="userData ml-3">
                                 <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);">User: {{auth()->user()->name}}</a></h2>
-                                <h6 class="d-block"><a href="javascript:void(0)">{{$booking}}</a> Approved Bookings</h6>
-                                <h6 class="d-block"><a href="javascript:void(0)">{{$Booking}}</a> Pending Bookings</h6>
+                               
                             </div>
 
                         </div>
@@ -94,12 +93,12 @@
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
-            <th scope="col">Room </th>
-            <th scope="col">Number of guest</th>
-            <th scope="col">pickup Point </th>
+            <th scope="col">Room</th>
+            <th scope="col">Number of guests</th>
+            <th scope="col">Pickup Point</th>
             <th scope="col">Special Request</th>
             <th scope="col">Amount</th>
-            <th scope="col">Transanction ID</th>
+            <th scope="col">Transaction ID</th>
             <th scope="col">Payment Status</th>
             <th scope="col">Action</th>
         </tr>
@@ -121,17 +120,19 @@
             <td>{{$booking->pickup_point}}</td>
             <td>{{$booking->special_requests}}</td>
             <td>{{$booking->amount}}</td>
-            @if($booking->payment_status == 'confirm')
-            <td>{{$booking->transanction_id}}</td>
-            @endif
-           
+            <td>
+                @if($booking->payment_status == 'Paid')
+                    {{$booking->transanction_id}}
+                @endif
+            </td>
             <td>{{$booking->payment_status}}</td>
             <td>
-
-                @if($booking->status=='pending')
-                <a class="btn btn-danger" href="{{route('cancel.bookings',$booking->id)}}">Cancel Booking</a>
-                @elseif($booking->status == 'Approved' && $booking->payment_status != 'confirm')
-                <a class="btn btn-success" href="{{ route('make.payment', $booking->id) }}">Make Payment</a>
+                @if($booking->status == 'pending')
+                    <a class="btn btn-danger" href="{{ route('cancel.bookings', $booking->id) }}">Cancel Booking</a>
+                @elseif($booking->status == 'Approved' && $booking->payment_status != 'Paid')
+                    <a class="btn btn-success" href="{{ route('make.payment', $booking->id) }}">Make Payment</a>
+                @elseif($booking->payment_status == 'Paid')
+                    <a class="btn btn-primary" href="{{ route('payment.reciept', $booking->id) }}" target="_blank">Print Receipt</a>
                 @endif
             </td>
         </tr>

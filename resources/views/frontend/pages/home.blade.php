@@ -19,8 +19,8 @@
 <div class="container-fluid py-5">
     <div class="container py-5">
         <div class="text-center mb-3 pb-3">
-            <a class="btn btn-primary" href="{{route('give.review')}}">Give Review</a>
-            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Review</h6>
+            <a class="btn btn-primary" href="{{route('give.review')}}">Testimonial</a>
+            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Testimonial</h6>
             <h1>What Say Our Clients</h1>
         </div>
         <div class="row">

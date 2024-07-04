@@ -42,9 +42,9 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
 
     Route::get('/vlog',[FrontendHomeController::class,'vlog'])->name('frontend.vlog');
 
-    Route::get('/location/list',[FrontendLocationController::class,'location'])->name('frontend.location');
-    Route::get('/location/details',[FrontendLocationController::class,'details'])->name('frontend.details');
-
+    Route::get('/location/list', [FrontendLocationController::class, 'location'])->name('frontend.location');
+    Route::get('/location/details/{id}', [FrontendLocationController::class, 'details'])->name('frontend.details');
+    
     Route::get('/registration',[FrontendTouristController::class,'registration'])->name('tourist.registration');
     Route::post('/reg-form-store',[FrontendTouristController::class,'store'])->name('tourist.regform.store');
 
@@ -74,6 +74,8 @@ use App\Http\Controllers\Frontend\SinglePackageController as FrontendSinglePacka
         Route::post('/booking-Form-store/{id}',[FrontendBookingsController::class,'bookstore'])->name('book.store');
         Route::get('/cancel-bookings/{package_id}',[FrontendBookingsController::class,'cancelBookings'])->name('cancel.bookings');
         Route::get('/make-payment/{id}',[FrontendTouristController::class,'makePayment'])->name('make.payment');
+        Route::get('/print-reciept/{id}',[FrontendTouristController::class,'reciept'])->name('payment.reciept');
+
 
         
         
